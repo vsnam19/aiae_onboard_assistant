@@ -326,6 +326,7 @@ class OnboardingAssistant:
         self.save_conversation_history("user", user_message)
         response = self.__send_message(user_message)
         self.save_conversation_history("assistant", response)
+        return response
 
     def __send_message(self, user_message: str) -> str:
         """Send a message to the assistant and get a response."""

@@ -66,7 +66,7 @@ elif "user_name" in st.session_state:
     with st.sidebar:
         st.title("🛠️ Chat Options")
         
-        if st.button("🔄 Reset Conversation"):
+        if st.button("🔄 Reset Conversation", use_container_width=True):
             if "assistant" in st.session_state:
                 st.session_state.assistant.reset_conversation()
             st.session_state.chat = [
@@ -74,7 +74,7 @@ elif "user_name" in st.session_state:
             ]
             st.rerun()
         
-        if st.button("📊 Show Conversation Summary"):
+        if st.button("📊 Show Conversation Summary", use_container_width=True):
             if "assistant" in st.session_state:
                 summary = st.session_state.assistant.get_conversation_summary()
                 st.write("**Conversation Statistics:**")
@@ -83,7 +83,7 @@ elif "user_name" in st.session_state:
                 st.write(f"- Assistant responses: {summary['assistant_messages']}")
                 st.write(f"- Information lookups: {summary['tool_calls']}")
         
-        if st.button("👋 Start Over"):
+        if st.button("👋 Start Over", use_container_width=True):
             # Clear all session state
             for key in list(st.session_state.keys()):
                 del st.session_state[key]
