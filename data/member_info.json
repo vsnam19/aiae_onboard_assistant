@@ -1,0 +1,906 @@
+[
+  {
+    "project_code": "PROJ001",
+    "project_name": "Employee Onboarding Assistant",
+    "department": "Product",
+    "start_date": "2024-10-03",
+    "status": "on-hold",
+    "description": "Strategic initiative to improve business outcomes through technology",
+    "members": [
+      {
+        "employee_id": "EMP0001",
+        "name": "Indigo Smith",
+        "role": "Senior Product Manager",
+        "email": "indigo.smith@company.com",
+        "department": "Product",
+        "team": "Product Team 2",
+        "manager": "Director of Product",
+        "hire_date": "2023-05-07",
+        "location": "San Francisco",
+        "phone": "+1-555-177-7706",
+        "skills": [
+          "Kubernetes",
+          "Agile",
+          "Node.js",
+          "Python",
+          "Project Management",
+          "Docker",
+          "PostgreSQL"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0002",
+        "name": "Sam Williams",
+        "role": "Product Designer",
+        "email": "sam.williams@company.com",
+        "department": "Product",
+        "team": "Product Team 2",
+        "manager": "Indigo Smith",
+        "hire_date": "2023-03-19",
+        "location": "Remote",
+        "phone": "+1-555-186-9333",
+        "skills": [
+          "Node.js",
+          "AWS",
+          "Python",
+          "JavaScript",
+          "MongoDB",
+          "Docker",
+          "React"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0003",
+        "name": "Blake Martin",
+        "role": "Product Analyst",
+        "email": "blake.martin@company.com",
+        "department": "Product",
+        "team": "Product Team 2",
+        "manager": "Indigo Smith",
+        "hire_date": "2022-10-09",
+        "location": "New York",
+        "phone": "+1-555-184-8463",
+        "skills": [
+          "React",
+          "DevOps",
+          "MongoDB",
+          "Agile",
+          "Python"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0004",
+        "name": "Reese Anderson",
+        "role": "Product Owner",
+        "email": "reese.anderson@company.com",
+        "department": "Product",
+        "team": "Product Team 1",
+        "manager": "Indigo Smith",
+        "hire_date": "2023-04-25",
+        "location": "Remote",
+        "phone": "+1-555-153-2372",
+        "skills": [
+          "Docker",
+          "Data Analysis",
+          "AWS"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0005",
+        "name": "Morgan Anderson",
+        "role": "UX Researcher",
+        "email": "morgan.anderson@company.com",
+        "department": "Product",
+        "team": "Product Team 1",
+        "manager": "Indigo Smith",
+        "hire_date": "2023-09-28",
+        "location": "San Francisco",
+        "phone": "+1-555-202-7830",
+        "skills": [
+          "Machine Learning",
+          "JavaScript",
+          "React",
+          "AWS",
+          "Project Management"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0006",
+        "name": "Rowan Walker",
+        "role": "Product Manager",
+        "email": "rowan.walker@company.com",
+        "department": "Product",
+        "team": "Product Team 1",
+        "manager": "Indigo Smith",
+        "hire_date": "2023-12-21",
+        "location": "San Francisco",
+        "phone": "+1-555-933-2518",
+        "skills": [
+          "Project Management",
+          "Node.js",
+          "Kubernetes",
+          "MongoDB",
+          "Docker",
+          "Data Analysis"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0007",
+        "name": "Taylor Johnson",
+        "role": "Product Analyst",
+        "email": "taylor.johnson@company.com",
+        "department": "Product",
+        "team": "Product Team 1",
+        "manager": "Indigo Smith",
+        "hire_date": "2024-01-12",
+        "location": "New York",
+        "phone": "+1-555-777-9438",
+        "skills": [
+          "AWS",
+          "Docker",
+          "Project Management",
+          "Data Analysis",
+          "Python",
+          "DevOps",
+          "JavaScript"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0008",
+        "name": "Phoenix Lewis",
+        "role": "Product Analyst",
+        "email": "phoenix.lewis@company.com",
+        "department": "Product",
+        "team": "Product Team 2",
+        "manager": "Indigo Smith",
+        "hire_date": "2024-02-12",
+        "location": "Remote",
+        "phone": "+1-555-105-3746",
+        "skills": [
+          "Node.js",
+          "Python",
+          "DevOps",
+          "JavaScript",
+          "MongoDB",
+          "React",
+          "Agile"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      }
+    ]
+  },
+  {
+    "project_code": "PROJ002",
+    "project_name": "Customer Portal Redesign",
+    "department": "Sales",
+    "start_date": "2024-12-29",
+    "status": "active",
+    "description": "Strategic initiative to improve business outcomes through technology",
+    "members": [
+      {
+        "employee_id": "EMP0009",
+        "name": "Quinn Walker",
+        "role": "Team Member",
+        "email": "quinn.walker@company.com",
+        "department": "Sales",
+        "team": "Sales Team 1",
+        "manager": "Director of Sales",
+        "hire_date": "2024-12-22",
+        "location": "London",
+        "phone": "+1-555-648-3335",
+        "skills": [
+          "Node.js",
+          "React",
+          "MongoDB",
+          "JavaScript",
+          "Docker"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0010",
+        "name": "Quinn Wilson",
+        "role": "Specialist",
+        "email": "quinn.wilson@company.com",
+        "department": "Sales",
+        "team": "Sales Team 1",
+        "manager": "Quinn Walker",
+        "hire_date": "2022-12-14",
+        "location": "London",
+        "phone": "+1-555-318-2890",
+        "skills": [
+          "AWS",
+          "React",
+          "Machine Learning",
+          "JavaScript"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0011",
+        "name": "Riley Clark",
+        "role": "Coordinator",
+        "email": "riley.clark@company.com",
+        "department": "Sales",
+        "team": "Sales Team 3",
+        "manager": "Quinn Walker",
+        "hire_date": "2023-11-21",
+        "location": "Remote",
+        "phone": "+1-555-687-8961",
+        "skills": [
+          "AWS",
+          "Data Analysis",
+          "Kubernetes",
+          "DevOps",
+          "JavaScript",
+          "Project Management"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0012",
+        "name": "Skylar Gonzalez",
+        "role": "Specialist",
+        "email": "skylar.gonzalez@company.com",
+        "department": "Sales",
+        "team": "Sales Team 3",
+        "manager": "Quinn Walker",
+        "hire_date": "2024-11-15",
+        "location": "Singapore",
+        "phone": "+1-555-853-7256",
+        "skills": [
+          "Agile",
+          "Data Analysis",
+          "AWS"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0013",
+        "name": "Marlowe Thompson",
+        "role": "Team Member",
+        "email": "marlowe.thompson@company.com",
+        "department": "Sales",
+        "team": "Sales Team 2",
+        "manager": "Quinn Walker",
+        "hire_date": "2025-03-20",
+        "location": "San Francisco",
+        "phone": "+1-555-847-4116",
+        "skills": [
+          "DevOps",
+          "Project Management",
+          "Agile",
+          "PostgreSQL",
+          "JavaScript",
+          "Docker"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0014",
+        "name": "Sam Williams",
+        "role": "Team Member",
+        "email": "sam.williams@company.com",
+        "department": "Sales",
+        "team": "Sales Team 3",
+        "manager": "Quinn Walker",
+        "hire_date": "2024-05-24",
+        "location": "San Francisco",
+        "phone": "+1-555-438-5721",
+        "skills": [
+          "Agile",
+          "Data Analysis",
+          "Machine Learning",
+          "PostgreSQL"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0015",
+        "name": "Sage Taylor",
+        "role": "Specialist",
+        "email": "sage.taylor@company.com",
+        "department": "Sales",
+        "team": "Sales Team 2",
+        "manager": "Quinn Walker",
+        "hire_date": "2024-01-29",
+        "location": "London",
+        "phone": "+1-555-349-4843",
+        "skills": [
+          "JavaScript",
+          "React",
+          "Data Analysis",
+          "PostgreSQL",
+          "Project Management",
+          "DevOps"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0016",
+        "name": "Sam Martinez",
+        "role": "Team Member",
+        "email": "sam.martinez@company.com",
+        "department": "Sales",
+        "team": "Sales Team 2",
+        "manager": "Quinn Walker",
+        "hire_date": "2022-10-06",
+        "location": "Remote",
+        "phone": "+1-555-253-8922",
+        "skills": [
+          "Python",
+          "Project Management",
+          "Data Analysis",
+          "DevOps",
+          "MongoDB"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      }
+    ]
+  },
+  {
+    "project_code": "PROJ003",
+    "project_name": "Mobile Banking App",
+    "department": "Operations",
+    "start_date": "2024-09-14",
+    "status": "active",
+    "description": "Strategic initiative to improve business outcomes through technology",
+    "members": [
+      {
+        "employee_id": "EMP0017",
+        "name": "Taylor Johnson",
+        "role": "Coordinator",
+        "email": "taylor.johnson@company.com",
+        "department": "Operations",
+        "team": "Operations Team 3",
+        "manager": "Director of Operations",
+        "hire_date": "2022-07-09",
+        "location": "Remote",
+        "phone": "+1-555-390-9919",
+        "skills": [
+          "JavaScript",
+          "React",
+          "Data Analysis",
+          "PostgreSQL",
+          "Agile",
+          "Python"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0018",
+        "name": "Rowan Garcia",
+        "role": "Specialist",
+        "email": "rowan.garcia@company.com",
+        "department": "Operations",
+        "team": "Operations Team 3",
+        "manager": "Taylor Johnson",
+        "hire_date": "2024-10-25",
+        "location": "San Francisco",
+        "phone": "+1-555-109-9586",
+        "skills": [
+          "AWS",
+          "Project Management",
+          "React",
+          "JavaScript",
+          "Agile",
+          "Node.js"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0019",
+        "name": "Phoenix Lewis",
+        "role": "Team Member",
+        "email": "phoenix.lewis@company.com",
+        "department": "Operations",
+        "team": "Operations Team 1",
+        "manager": "Taylor Johnson",
+        "hire_date": "2023-12-29",
+        "location": "Remote",
+        "phone": "+1-555-681-2505",
+        "skills": [
+          "DevOps",
+          "MongoDB",
+          "Kubernetes"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0020",
+        "name": "Alex Clark",
+        "role": "Team Member",
+        "email": "alex.clark@company.com",
+        "department": "Operations",
+        "team": "Operations Team 3",
+        "manager": "Taylor Johnson",
+        "hire_date": "2025-01-20",
+        "location": "London",
+        "phone": "+1-555-932-9556",
+        "skills": [
+          "MongoDB",
+          "Kubernetes",
+          "DevOps"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0021",
+        "name": "Finley Martinez",
+        "role": "Team Member",
+        "email": "finley.martinez@company.com",
+        "department": "Operations",
+        "team": "Operations Team 3",
+        "manager": "Taylor Johnson",
+        "hire_date": "2023-10-29",
+        "location": "London",
+        "phone": "+1-555-937-7185",
+        "skills": [
+          "Node.js",
+          "Machine Learning",
+          "Python",
+          "Project Management",
+          "React",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0022",
+        "name": "Reese Anderson",
+        "role": "Coordinator",
+        "email": "reese.anderson@company.com",
+        "department": "Operations",
+        "team": "Operations Team 3",
+        "manager": "Taylor Johnson",
+        "hire_date": "2024-11-24",
+        "location": "London",
+        "phone": "+1-555-922-3154",
+        "skills": [
+          "Data Analysis",
+          "AWS",
+          "Node.js",
+          "Python",
+          "MongoDB",
+          "Docker"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0023",
+        "name": "Hayden White",
+        "role": "Coordinator",
+        "email": "hayden.white@company.com",
+        "department": "Operations",
+        "team": "Operations Team 2",
+        "manager": "Taylor Johnson",
+        "hire_date": "2024-08-18",
+        "location": "San Francisco",
+        "phone": "+1-555-774-3495",
+        "skills": [
+          "Machine Learning",
+          "MongoDB",
+          "Data Analysis",
+          "React",
+          "JavaScript",
+          "Project Management"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0024",
+        "name": "Hayden Lewis",
+        "role": "Specialist",
+        "email": "hayden.lewis@company.com",
+        "department": "Operations",
+        "team": "Operations Team 2",
+        "manager": "Taylor Johnson",
+        "hire_date": "2024-05-27",
+        "location": "San Francisco",
+        "phone": "+1-555-887-1589",
+        "skills": [
+          "Kubernetes",
+          "Data Analysis",
+          "Agile",
+          "MongoDB",
+          "AWS",
+          "React"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      }
+    ]
+  },
+  {
+    "project_code": "PROJ004",
+    "project_name": "E-commerce Platform",
+    "department": "Engineering",
+    "start_date": "2024-07-06",
+    "status": "active",
+    "description": "Strategic initiative to improve business outcomes through technology",
+    "members": [
+      {
+        "employee_id": "EMP0025",
+        "name": "Blake Martin",
+        "role": "Principal Engineer",
+        "email": "blake.martin@company.com",
+        "department": "Engineering",
+        "team": "Engineering Team 3",
+        "manager": "Director of Engineering",
+        "hire_date": "2024-11-25",
+        "location": "Remote",
+        "phone": "+1-555-157-6168",
+        "skills": [
+          "React",
+          "Node.js",
+          "AWS",
+          "Kubernetes",
+          "PostgreSQL"
+        ],
+        "status": "active",
+        "security_clearance": "elevated"
+      },
+      {
+        "employee_id": "EMP0026",
+        "name": "Alex Davis",
+        "role": "Backend Developer",
+        "email": "alex.davis@company.com",
+        "department": "Engineering",
+        "team": "Engineering Team 3",
+        "manager": "Blake Martin",
+        "hire_date": "2023-07-12",
+        "location": "Remote",
+        "phone": "+1-555-136-1750",
+        "skills": [
+          "DevOps",
+          "React",
+          "Node.js",
+          "PostgreSQL"
+        ],
+        "status": "on-leave",
+        "security_clearance": "admin"
+      },
+      {
+        "employee_id": "EMP0027",
+        "name": "Quinn Walker",
+        "role": "Backend Developer",
+        "email": "quinn.walker@company.com",
+        "department": "Engineering",
+        "team": "Engineering Team 2",
+        "manager": "Blake Martin",
+        "hire_date": "2022-07-05",
+        "location": "Remote",
+        "phone": "+1-555-278-1993",
+        "skills": [
+          "JavaScript",
+          "Node.js",
+          "AWS",
+          "Docker"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0028",
+        "name": "Reese Anderson",
+        "role": "Backend Developer",
+        "email": "reese.anderson@company.com",
+        "department": "Engineering",
+        "team": "Engineering Team 2",
+        "manager": "Blake Martin",
+        "hire_date": "2024-11-15",
+        "location": "New York",
+        "phone": "+1-555-739-5006",
+        "skills": [
+          "MongoDB",
+          "PostgreSQL",
+          "Node.js",
+          "DevOps",
+          "Kubernetes",
+          "Project Management"
+        ],
+        "status": "active",
+        "security_clearance": "elevated"
+      },
+      {
+        "employee_id": "EMP0029",
+        "name": "Indigo Smith",
+        "role": "DevOps Engineer",
+        "email": "indigo.smith@company.com",
+        "department": "Engineering",
+        "team": "Engineering Team 3",
+        "manager": "Blake Martin",
+        "hire_date": "2023-08-28",
+        "location": "Remote",
+        "phone": "+1-555-860-4296",
+        "skills": [
+          "AWS",
+          "MongoDB",
+          "Project Management",
+          "Docker",
+          "Kubernetes"
+        ],
+        "status": "active",
+        "security_clearance": "elevated"
+      },
+      {
+        "employee_id": "EMP0030",
+        "name": "Taylor Jackson",
+        "role": "Senior Software Engineer",
+        "email": "taylor.jackson@company.com",
+        "department": "Engineering",
+        "team": "Engineering Team 1",
+        "manager": "Blake Martin",
+        "hire_date": "2024-07-31",
+        "location": "Singapore",
+        "phone": "+1-555-273-4638",
+        "skills": [
+          "Data Analysis",
+          "Node.js",
+          "React",
+          "Python",
+          "AWS",
+          "Machine Learning",
+          "PostgreSQL"
+        ],
+        "status": "active",
+        "security_clearance": "admin"
+      },
+      {
+        "employee_id": "EMP0031",
+        "name": "Quinn Wilson",
+        "role": "Engineering Manager",
+        "email": "quinn.wilson@company.com",
+        "department": "Engineering",
+        "team": "Engineering Team 1",
+        "manager": "Blake Martin",
+        "hire_date": "2022-12-15",
+        "location": "London",
+        "phone": "+1-555-254-8036",
+        "skills": [
+          "MongoDB",
+          "Docker",
+          "Data Analysis",
+          "Machine Learning",
+          "PostgreSQL",
+          "Python"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0032",
+        "name": "Morgan Anderson",
+        "role": "Principal Engineer",
+        "email": "morgan.anderson@company.com",
+        "department": "Engineering",
+        "team": "Engineering Team 3",
+        "manager": "Blake Martin",
+        "hire_date": "2023-11-21",
+        "location": "New York",
+        "phone": "+1-555-404-8506",
+        "skills": [
+          "JavaScript",
+          "Node.js",
+          "Kubernetes",
+          "Agile",
+          "MongoDB"
+        ],
+        "status": "on-leave",
+        "security_clearance": "admin"
+      }
+    ]
+  },
+  {
+    "project_code": "PROJ005",
+    "project_name": "Data Analytics Dashboard",
+    "department": "Sales",
+    "start_date": "2025-03-23",
+    "status": "completed",
+    "description": "Strategic initiative to improve business outcomes through technology",
+    "members": [
+      {
+        "employee_id": "EMP0033",
+        "name": "Indigo Wilson",
+        "role": "Team Member",
+        "email": "indigo.wilson@company.com",
+        "department": "Sales",
+        "team": "Sales Team 1",
+        "manager": "Director of Sales",
+        "hire_date": "2022-08-15",
+        "location": "London",
+        "phone": "+1-555-558-3134",
+        "skills": [
+          "AWS",
+          "Machine Learning",
+          "React",
+          "Agile",
+          "Project Management"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0034",
+        "name": "Nova Thomas",
+        "role": "Team Member",
+        "email": "nova.thomas@company.com",
+        "department": "Sales",
+        "team": "Sales Team 1",
+        "manager": "Indigo Wilson",
+        "hire_date": "2024-04-14",
+        "location": "San Francisco",
+        "phone": "+1-555-476-6287",
+        "skills": [
+          "Python",
+          "DevOps",
+          "JavaScript",
+          "Node.js",
+          "Data Analysis",
+          "Machine Learning"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0035",
+        "name": "Hayden Smith",
+        "role": "Specialist",
+        "email": "hayden.smith@company.com",
+        "department": "Sales",
+        "team": "Sales Team 1",
+        "manager": "Indigo Wilson",
+        "hire_date": "2022-12-13",
+        "location": "London",
+        "phone": "+1-555-618-8935",
+        "skills": [
+          "Project Management",
+          "JavaScript",
+          "Data Analysis",
+          "DevOps",
+          "Node.js",
+          "PostgreSQL",
+          "Kubernetes"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0036",
+        "name": "Drew Jackson",
+        "role": "Coordinator",
+        "email": "drew.jackson@company.com",
+        "department": "Sales",
+        "team": "Sales Team 1",
+        "manager": "Indigo Wilson",
+        "hire_date": "2025-03-12",
+        "location": "San Francisco",
+        "phone": "+1-555-828-5893",
+        "skills": [
+          "React",
+          "Docker",
+          "Data Analysis",
+          "DevOps",
+          "Node.js",
+          "Kubernetes",
+          "MongoDB"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0037",
+        "name": "Jamie Clark",
+        "role": "Specialist",
+        "email": "jamie.clark@company.com",
+        "department": "Sales",
+        "team": "Sales Team 1",
+        "manager": "Indigo Wilson",
+        "hire_date": "2024-09-06",
+        "location": "Remote",
+        "phone": "+1-555-130-3863",
+        "skills": [
+          "Data Analysis",
+          "Kubernetes",
+          "Python",
+          "Project Management",
+          "Machine Learning",
+          "DevOps"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0038",
+        "name": "Rowan Walker",
+        "role": "Specialist",
+        "email": "rowan.walker@company.com",
+        "department": "Sales",
+        "team": "Sales Team 1",
+        "manager": "Indigo Wilson",
+        "hire_date": "2025-02-04",
+        "location": "New York",
+        "phone": "+1-555-955-7719",
+        "skills": [
+          "React",
+          "MongoDB",
+          "Data Analysis",
+          "Machine Learning",
+          "PostgreSQL"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0039",
+        "name": "Marlowe Thompson",
+        "role": "Team Member",
+        "email": "marlowe.thompson@company.com",
+        "department": "Sales",
+        "team": "Sales Team 3",
+        "manager": "Indigo Wilson",
+        "hire_date": "2025-03-25",
+        "location": "London",
+        "phone": "+1-555-577-9836",
+        "skills": [
+          "AWS",
+          "Agile",
+          "Data Analysis"
+        ],
+        "status": "active",
+        "security_clearance": "standard"
+      },
+      {
+        "employee_id": "EMP0040",
+        "name": "Quinn Wilson",
+        "role": "Coordinator",
+        "email": "quinn.wilson@company.com",
+        "department": "Sales",
+        "team": "Sales Team 1",
+        "manager": "Indigo Wilson",
+        "hire_date": "2023-05-16",
+        "location": "Singapore",
+        "phone": "+1-555-675-2967",
+        "skills": [
+          "Project Management",
+          "Data Analysis",
+          "Kubernetes",
+          "Node.js"
+        ],
+        "status": "on-leave",
+        "security_clearance": "standard"
+      }
+    ]
+  }
+]

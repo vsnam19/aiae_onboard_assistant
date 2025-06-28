@@ -1,0 +1,14 @@
+# Core dependencies
+streamlit>=1.29.0
+openai>=1.10.0
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Utilities
+loguru>=0.7.0
+python-json-logger>=2.0.7
+
+# Azure dependencies
+azure-identity>=1.14.0
+azure-keyvault-secrets>=4.7.0
