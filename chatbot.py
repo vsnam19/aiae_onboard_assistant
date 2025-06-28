@@ -1,103 +1,287 @@
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 from openai import AzureOpenAI
 from config import Config
 from prompt import Prompt
 import json
 import logging
 import traceback
+import time
+from datetime import datetime
+import os
 
-# Configure logging
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_random_exponential
+)
+
+# Configure logging with more detailed format
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s',
+    handlers=[
+        logging.FileHandler('onboarding_assistant.log'),
+        logging.StreamHandler()
+    ]
 )
 logger = logging.getLogger(__name__)
 
-def get_member_information() -> str:
-    """Load member information from JSON file with improved error handling."""
+
+class FileNotFoundError(Exception):
+    """Custom exception for missing data files"""
+    pass
+
+
+class DataValidationError(Exception):
+    """Custom exception for invalid data format"""
+    pass
+
+
+class APIConnectionError(Exception):
+    """Custom exception for API connection issues"""
+    pass
+
+
+def validate_json_structure(data: Any, expected_keys: List[str], context: str) -> bool:
+    """Validate JSON data structure"""
     try:
-        with open(Config.MEMBER_INFO_PATH, 'r', encoding='utf-8') as file:
+        if not isinstance(data, list):
+            raise DataValidationError(
+                f"{context}: Expected list, got {type(data)}")
+
+        for item in data:
+            if not isinstance(item, dict):
+                raise DataValidationError(
+                    f"{context}: Expected dict items, got {type(item)}")
+
+            missing_keys = [key for key in expected_keys if key not in item]
+            if missing_keys:
+                logger.warning(
+                    f"{context}: Missing keys {missing_keys} in item")
+
+        return True
+    except Exception as e:
+        logger.error(f"Data validation failed for {context}: {str(e)}")
+        return False
+
+
+def get_member_information() -> str:
+    """Load member information from JSON file with  error handling."""
+    try:
+        file_path = Config.MEMBER_INFO_PATH
+
+        # Check file existence
+        if not os.path.exists(file_path):
+            error_msg = f"Member information file not found at: {file_path}"
+            logger.error(error_msg)
+            return json.dumps({
+                "error": "Data temporarily unavailable",
+                "message": "Member information is currently being updated. Please try again in a few minutes or contact IT support.",
+                "contact": "IT Support: it-support@company.com"
+            }, indent=2)
+
+        # Check file permissions
+        if not os.access(file_path, os.R_OK):
+            error_msg = f"Cannot read member information file: {file_path}"
+            logger.error(error_msg)
+            return json.dumps({
+                "error": "Access denied",
+                "message": "Unable to access member information. Please contact IT support.",
+                "contact": "IT Support: it-support@company.com"
+            }, indent=2)
+
+        # Load and validate data
+        with open(file_path, 'r', encoding='utf-8') as file:
             member_info = json.load(file)
-        logger.info("Successfully loaded member information")
+
+        # Validate data structure
+        expected_keys = ['project_code', 'project_name', 'members']
+        if not validate_json_structure(member_info, expected_keys, "Member Information"):
+            logger.warning(
+                "Member information has unexpected structure but proceeding")
+
+        logger.info(
+            f"Successfully loaded member information: {len(member_info)} projects")
         return json.dumps(member_info, indent=2, ensure_ascii=False)
-    except FileNotFoundError:
-        error_msg = f"Member information file not found at: {Config.MEMBER_INFO_PATH}"
-        logger.error(error_msg)
-        return error_msg
+
     except json.JSONDecodeError as e:
-        error_msg = f"Error decoding JSON from member information file: {str(e)}"
+        error_msg = f"Invalid JSON format in member information file: {str(e)}"
         logger.error(error_msg)
-        return error_msg
+        return json.dumps({
+            "error": "Data format error",
+            "message": "Member information file has formatting issues. IT has been notified.",
+            "contact": "For immediate assistance: hr@company.com"
+        }, indent=2)
+
+    except PermissionError:
+        error_msg = "Permission denied accessing member information file"
+        logger.error(error_msg)
+        return json.dumps({
+            "error": "Access denied",
+            "message": "Unable to access member information. Please contact IT support.",
+            "contact": "IT Support: it-support@company.com"
+        }, indent=2)
+
     except Exception as e:
         error_msg = f"Unexpected error loading member information: {str(e)}"
         logger.error(error_msg)
-        return error_msg
+        logger.error(f"Full traceback: {traceback.format_exc()}")
+        return json.dumps({
+            "error": "System error",
+            "message": "An unexpected error occurred. Please try again or contact support.",
+            "contact": "Support: support@company.com"
+        }, indent=2)
+
 
 def get_process_information() -> str:
-    """Load process information from JSON file with improved error handling."""
+    """Load process information from JSON file with  error handling."""
     try:
-        with open(Config.PROCESSES_INFO_PATH, 'r', encoding='utf-8') as file:
+        file_path = Config.PROCESSES_INFO_PATH
+
+        if not os.path.exists(file_path):
+            error_msg = f"Process information file not found at: {file_path}"
+            logger.error(error_msg)
+            return json.dumps({
+                "error": "Data temporarily unavailable",
+                "message": "Process information is currently being updated. Please try again later.",
+                "alternative": "For urgent process questions, contact your manager or team lead."
+            }, indent=2)
+
+        with open(file_path, 'r', encoding='utf-8') as file:
             processes_info = json.load(file)
-        logger.info("Successfully loaded process information")
+
+        # Validate data structure
+        expected_keys = ['project_code', 'project_name', 'processes']
+        validate_json_structure(
+            processes_info, expected_keys, "Process Information")
+
+        logger.info(
+            f"Successfully loaded process information: {len(processes_info)} projects")
         return json.dumps(processes_info, indent=2, ensure_ascii=False)
-    except FileNotFoundError:
-        error_msg = f"Process information file not found at: {Config.PROCESSES_INFO_PATH}"
-        logger.error(error_msg)
-        return error_msg
+
     except json.JSONDecodeError as e:
-        error_msg = f"Error decoding JSON from process information file: {str(e)}"
+        error_msg = f"Invalid JSON in process information file: {str(e)}"
         logger.error(error_msg)
-        return error_msg
+        return json.dumps({
+            "error": "Data format error",
+            "message": "Process information file has formatting issues. Please contact your team lead for process details.",
+            "contact": "Team Lead or Manager"
+        }, indent=2)
+
     except Exception as e:
         error_msg = f"Unexpected error loading process information: {str(e)}"
         logger.error(error_msg)
-        return error_msg
+        return json.dumps({
+            "error": "System error",
+            "message": "Unable to load process information. Please contact your manager for workflow details.",
+            "contact": "Manager or Team Lead"
+        }, indent=2)
+
 
 def get_techstack_information() -> str:
-    """Load tech stack information from JSON file with improved error handling."""
+    """Load tech stack information from JSON file with  error handling."""
     try:
-        with open(Config.TECHSTACK_INFO_PATH, 'r', encoding='utf-8') as file:
+        file_path = Config.TECHSTACK_INFO_PATH
+
+        if not os.path.exists(file_path):
+            error_msg = f"Tech stack information file not found at: {file_path}"
+            logger.error(error_msg)
+            return json.dumps({
+                "error": "Data temporarily unavailable",
+                "message": "Technology stack information is currently being updated.",
+                "alternative": "Please ask your team lead about the specific technologies used in your project."
+            }, indent=2)
+
+        with open(file_path, 'r', encoding='utf-8') as file:
             techstack_info = json.load(file)
-        logger.info("Successfully loaded tech stack information")
+
+        # Validate data structure
+        expected_keys = ['project_code', 'project_name', 'tech_stack']
+        validate_json_structure(
+            techstack_info, expected_keys, "Tech Stack Information")
+
+        logger.info(
+            f"Successfully loaded tech stack information: {len(techstack_info)} projects")
         return json.dumps(techstack_info, indent=2, ensure_ascii=False)
-    except FileNotFoundError:
-        error_msg = f"Tech stack information file not found at: {Config.TECHSTACK_INFO_PATH}"
-        logger.error(error_msg)
-        return error_msg
+
     except json.JSONDecodeError as e:
-        error_msg = f"Error decoding JSON from tech stack information file: {str(e)}"
+        error_msg = f"Invalid JSON in tech stack information file: {str(e)}"
         logger.error(error_msg)
-        return error_msg
+        return json.dumps({
+            "error": "Data format error",
+            "message": "Technology information file has formatting issues. Please ask your team about the tech stack.",
+            "contact": "Team Lead or Senior Developer"
+        }, indent=2)
+
     except Exception as e:
         error_msg = f"Unexpected error loading tech stack information: {str(e)}"
         logger.error(error_msg)
-        return error_msg
+        return json.dumps({
+            "error": "System error",
+            "message": "Unable to load technology information. Please contact your team for tech stack details.",
+            "contact": "Team Lead or Technical Manager"
+        }, indent=2)
+
 
 def get_user_project_assignment(user_name: str, user_department: str = None) -> str:
-    """Find the current user's specific project assignment(s)."""
+    """Find user's project assignment with enhanced search and error handling."""
     try:
-        with open(Config.MEMBER_INFO_PATH, 'r', encoding='utf-8') as file:
+        # Validate input
+        if not user_name or not user_name.strip():
+            return json.dumps({
+                'user_found': False,
+                'error': 'Please provide a valid name to search for project assignments.',
+                'suggestion': 'Enter your full name as it appears in company records.'
+            }, indent=2)
+
+        user_name = user_name.strip()
+        file_path = Config.MEMBER_INFO_PATH
+
+        if not os.path.exists(file_path):
+            return json.dumps({
+                'user_found': False,
+                'error': 'Member information is temporarily unavailable.',
+                'suggestion': 'Please contact HR at hr@company.com for your project assignment.'
+            }, indent=2)
+
+        with open(file_path, 'r', encoding='utf-8') as file:
             member_info = json.load(file)
-        
+
         user_projects = []
-        
-        # Search through all projects for the user
+        search_variations = [
+            user_name.lower(),
+            user_name.lower().split()[
+                0] if ' ' in user_name else user_name.lower(),  # First name
+            ' '.join(user_name.lower().split()[:2]) if len(
+                user_name.split()) > 1 else user_name.lower()  # First + Last
+        ]
+
+        # Enhanced search through all projects
         for project in member_info:
+            if not isinstance(project, dict) or 'members' not in project:
+                continue
+
             for member in project.get('members', []):
-                # Match by name (flexible matching)
+                if not isinstance(member, dict):
+                    continue
+
                 member_name = member.get('name', '').lower()
-                search_name = user_name.lower()
-                
-                # Check if it's a match (first name, full name, or partial match)
-                if (search_name in member_name or 
-                    member_name.startswith(search_name) or
-                    any(search_name in name_part for name_part in member_name.split())):
-                    
-                    # Additional department check if provided
-                    if user_department and member.get('department'):
-                        if user_department.lower() not in member.get('department', '').lower():
+
+                # Multiple matching strategies
+                name_match = any(
+                    search_var in member_name or
+                    member_name.startswith(search_var) or
+                    any(search_var in name_part for name_part in member_name.split())
+                    for search_var in search_variations
+                )
+
+                if name_match:
+                    # Additional department filter if provided
+                    if user_department:
+                        member_dept = member.get('department', '').lower()
+                        if user_department.lower() not in member_dept:
                             continue
-                    
+
                     user_projects.append({
                         'project_code': project.get('project_code'),
                         'project_name': project.get('project_name'),
@@ -112,242 +296,339 @@ def get_user_project_assignment(user_name: str, user_department: str = None) -> 
                             'team': member.get('team'),
                             'manager': member.get('manager'),
                             'hire_date': member.get('hire_date'),
-                            'status': member.get('status')
+                            'status': member.get('status'),
+                            'department': member.get('department')
                         }
                     })
-        
+
         if user_projects:
             result = {
                 'user_found': True,
                 'total_projects': len(user_projects),
-                'projects': user_projects
+                'search_name': user_name,
+                'projects': user_projects,
+                'message': f"Found {len(user_projects)} project assignment(s) for {user_name}"
             }
         else:
+            # Provide helpful suggestions when user not found
             result = {
                 'user_found': False,
-                'message': f"No project assignment found for user: {user_name}" + 
-                          (f" in department: {user_department}" if user_department else ""),
-                'suggestion': "Please check with HR or your manager for project assignment details."
+                'search_name': user_name,
+                'message': f"No project assignment found for: {user_name}",
+                'suggestions': [
+                    "Check if your name is spelled exactly as in company records",
+                    "Try using just your first name",
+                    "Contact HR if you're a very recent hire",
+                    "Verify with your hiring manager about project assignments"
+                ],
+                'contacts': {
+                    'hr': 'hr@company.com',
+                    'it_support': 'it-support@company.com'
+                }
             }
-        
-        logger.info(f"User project lookup for '{user_name}': {len(user_projects)} projects found")
+
+        logger.info(
+            f"User project lookup for '{user_name}': {len(user_projects)} projects found")
         return json.dumps(result, indent=2, ensure_ascii=False)
-        
-    except Exception as e:
-        error_msg = f"Error looking up user project assignment: {str(e)}"
+
+    except json.JSONDecodeError as e:
+        error_msg = f"Data format error in member information: {str(e)}"
         logger.error(error_msg)
         return json.dumps({
             'user_found': False,
-            'error': error_msg
+            'error': 'Member information file has formatting issues.',
+            'suggestion': 'Please contact HR at hr@company.com for your project assignment.'
         }, indent=2)
+
+    except Exception as e:
+        error_msg = f"Error looking up user project assignment: {str(e)}"
+        logger.error(error_msg)
+        logger.error(f"Full traceback: {traceback.format_exc()}")
+        return json.dumps({
+            'user_found': False,
+            'error': 'System error occurred during lookup.',
+            'suggestion': 'Please try again or contact support@company.com'
+        }, indent=2)
+
 
 class AzureOpenAIClient:
     _instance: Optional[AzureOpenAI] = None
+    _last_request_time: float = 0
+    # Minimum time between requests (rate limiting)
+    _min_request_interval: float = 0.1
 
     @staticmethod
     def get_instance() -> AzureOpenAI:
-        """Get or create singleton instance of Azure OpenAI client."""
+        """Get or create singleton instance of Azure OpenAI client with validation."""
         if AzureOpenAIClient._instance is None:
-            if not all([Config.OPENAI_ENDPOINT, Config.OPENAI_API_KEY, Config.OPENAI_API_VERSION]):
-                raise ValueError(
-                    "Azure OpenAI credentials are not properly configured. "
-                    "Please check OPENAI_ENDPOINT, OPENAI_API_KEY, and OPENAI_API_VERSION."
-                )
+            # Validate all required configurations
+            required_configs = {
+                'OPENAI_ENDPOINT': Config.OPENAI_ENDPOINT,
+                'OPENAI_API_KEY': Config.OPENAI_API_KEY,
+                'OPENAI_API_VERSION': Config.OPENAI_API_VERSION,
+                'OPENAI_DEPLOYMENT_NAME': Config.OPENAI_DEPLOYMENT_NAME
+            }
+
+            missing_configs = [key for key,
+                               value in required_configs.items() if not value]
+            if missing_configs:
+                error_msg = f"Missing Azure OpenAI configuration: {', '.join(missing_configs)}"
+                logger.error(error_msg)
+                raise APIConnectionError(error_msg)
 
             try:
                 AzureOpenAIClient._instance = AzureOpenAI(
-                    azure_endpoint= Config.OPENAI_ENDPOINT,
+                    azure_endpoint=Config.OPENAI_ENDPOINT,
                     api_key=Config.OPENAI_API_KEY,
                     api_version=Config.OPENAI_API_VERSION
                 )
                 logger.info("Azure OpenAI client initialized successfully")
             except Exception as e:
-                logger.error(f"Failed to initialize Azure OpenAI client: {str(e)}")
-                raise
+                error_msg = f"Failed to initialize Azure OpenAI client: {str(e)}"
+                logger.error(error_msg)
+                raise APIConnectionError(error_msg)
 
         return AzureOpenAIClient._instance
+
+    @staticmethod
+    def _apply_rate_limiting():
+        """Apply rate limiting between requests."""
+        current_time = time.time()
+        time_since_last_request = current_time - AzureOpenAIClient._last_request_time
+
+        if time_since_last_request < AzureOpenAIClient._min_request_interval:
+            sleep_time = AzureOpenAIClient._min_request_interval - time_since_last_request
+            time.sleep(sleep_time)
+
+        AzureOpenAIClient._last_request_time = time.time()
 
     @staticmethod
     def get_chat_completion(
         messages: List[Dict[str, Any]],
         max_tokens: int = 1000,
         temperature: float = 0.7,
-        tools: Optional[List[Dict[str, Any]]] = None
-    ):
-        """Get chat completion from Azure OpenAI with improved error handling."""
-        client = AzureOpenAIClient.get_instance()
-        
-        try:
-            # Validate messages
-            if not messages:
-                raise ValueError("Messages list cannot be empty")
-            
-            # Prepare request parameters
-            request_params = {
-                "model": Config.OPENAI_DEPLOYMENT_NAME,
-                "messages": messages,
-                "max_tokens": max_tokens,
-                "temperature": temperature
-            }
-            
-            # Add tools if provided
-            if tools:
-                request_params["tools"] = tools
-                request_params["tool_choice"] = "auto"
-            
-            logger.info(f"Making API request with {len(messages)} messages")
-            response = client.chat.completions.create(**request_params)
-            
-            logger.info("Successfully received response from Azure OpenAI")
-            return response
-            
-        except Exception as e:
-            error_msg = f"Error in chat completion: {str(e)}"
-            logger.error(error_msg)
-            logger.error(f"Full traceback: {traceback.format_exc()}")
+        tools: Optional[List[Dict[str, Any]]] = None,
+        max_retries: int = 3
+    ) -> Optional[Any]:
+        """Get chat completion with  error handling and retries."""
+
+        # Validate inputs
+        if not messages:
+            logger.error("Messages list cannot be empty")
             return None
+
+        if len(messages) > 50:  # Reasonable conversation length limit
+            logger.warning(f"Very long conversation: {len(messages)} messages")
+
+        client = AzureOpenAIClient.get_instance()
+
+        for attempt in range(max_retries):
+            try:
+                # Apply rate limiting
+                AzureOpenAIClient._apply_rate_limiting()
+
+                # Prepare request parameters
+                request_params = {
+                    "model": Config.OPENAI_DEPLOYMENT_NAME,
+                    "messages": messages,
+                    "max_tokens": max_tokens,
+                    "temperature": temperature
+                }
+
+                # Add tools if provided
+                if tools:
+                    request_params["tools"] = tools
+                    request_params["tool_choice"] = "auto"
+
+                logger.info(
+                    f"Making API request (attempt {attempt + 1}/{max_retries}) with {len(messages)} messages")
+
+                start_time = time.time()
+                response = client.chat.completions.create(**request_params)
+                response_time = time.time() - start_time
+
+                logger.info(
+                    f"Successfully received response from Azure OpenAI (took {response_time:.2f}s)")
+                return response
+
+            except Exception as e:
+                error_msg = f"API request failed (attempt {attempt + 1}/{max_retries}): {str(e)}"
+                logger.error(error_msg)
+
+                if attempt < max_retries - 1:
+                    wait_time = 2 ** attempt  # Exponential backoff
+                    logger.info(f"Retrying in {wait_time} seconds...")
+                    time.sleep(wait_time)
+                else:
+                    logger.error(
+                        f"All {max_retries} attempts failed. Full traceback: {traceback.format_exc()}")
+                    return None
+
 
 class OnboardingAssistant:
     def __init__(self):
-        """Initialize the OnboardingAssistant with enhanced functionality."""
+        """Initialize the enhanced OnboardingAssistant."""
         self.system_prompt = Prompt.SYSTEM_PROMPT
         self.conversation_history: List[Dict[str, Any]] = []
         self.chat_history_file = Config.CHAT_HISTORY_PATH
+        self.session_id = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-        # Enhanced function definitions with better descriptions
+        # Enhanced function definitions with better error handling
         self.function_definitions = [
-        {
-            "type": "function",
-            "function": {
-                "name": "get_member_information",
-                "description": """Get team member information organized by projects.
-                
-                Data structure: projects[] -> members[] with fields like name, role, email, department, team, manager, hire_date, skills, status, phone, location
-                
-                Use for: team questions, contact info, roles, project assignments, "who works on X", "what's John's role", "team structure" """,
-                "parameters": {"type": "object", "properties": {}, "required": []}
-            }
-        },
-        {
-            "type": "function", 
-            "function": {
-                "name": "get_process_information",
-                "description": """Get company processes and workflows organized by projects.
-                
-                Data structure: projects[] -> processes[] with fields like process_name, description, status, dates, responsible_members, deliverables, dependencies, progress_percentage
-
-                Use for: workflow questions, process status, timelines, responsibilities, "how do we do X", "what's the status of Y", "who handles Z" """,
-                "parameters": {"type": "object", "properties": {}, "required": []}
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "get_techstack_information", 
-                "description": """Get technology stack information organized by projects.
-                
-                Data structure: projects[] -> tech_stack{frontend, backend, database, ai_ml, cloud, tools} with fields like technology, version, purpose, status, documentation_url, support_team, learning_resources
-                
-                Use for: technology questions, tool info, versions, documentation, "what tech do we use", "which database", "where to learn React" """,
-                "parameters": {"type": "object", "properties": {}, "required": []}
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "get_user_project_assignment",
-                "description": """Get the current user's project assignment(s) based on their name and optional department.
-                
-                Data structure: user_found (boolean), total_projects (int), projects[] with fields like project_code, project_name, department, status, description, member_info (employee_id, name, role, email, team, manager, hire_date, status)
-                
-                Use for: finding user's project assignments, checking current projects, "what project am I assigned to", "which team am I in" """,
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "user_name": {"type": "string", "description": "The name of the user to look up"},
-                        "user_department": {"type": "string", "description": "Optional department filter"}
-                    },
-                    "required": ["user_name"]
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_member_information",
+                    "description": """Retrieve team member information organized by projects. 
+                    
+                    Returns: JSON with project details and member lists including names, roles, emails, departments, teams, managers, hire dates, skills, status, phone, and location.
+                    
+                    Use for: team structure questions, contact information, role inquiries, project assignments, "who works on X", "what's John's role", "team composition".""",
+                    "parameters": {"type": "object", "properties": {}, "required": []}
+                }
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_process_information",
+                    "description": """Retrieve company processes and workflows organized by projects.
+                    
+                    Returns: JSON with project processes including process names, descriptions, status, dates, responsible members, deliverables, dependencies, and progress percentages.
+                    
+                    Use for: workflow questions, process status inquiries, timeline questions, responsibility clarification, "how do we do X", "what's the status of Y", "who handles Z".""",
+                    "parameters": {"type": "object", "properties": {}, "required": []}
+                }
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_techstack_information",
+                    "description": """Retrieve technology stack information organized by projects.
+                    
+                    Returns: JSON with project tech stacks including frontend, backend, database, AI/ML, cloud technologies, and tools with versions, purposes, status, documentation URLs, support teams, and learning resources.
+                    
+                    Use for: technology questions, tool information, version details, documentation links, "what tech do we use", "which database", "where to learn React", "what's our cloud setup".""",
+                    "parameters": {"type": "object", "properties": {}, "required": []}
+                }
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "get_user_project_assignment",
+                    "description": """Find a specific user's project assignment(s) based on their name and optional department filter.
+                    
+                    Returns: JSON with user_found status, total projects count, and detailed project assignments including project codes, names, departments, status, descriptions, and member information.
+                    
+                    Use for: personal project assignment queries, checking current projects, "what project am I assigned to", "which team am I in", "who is my manager".""",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "user_name": {"type": "string", "description": "The full name or first name of the user to look up"},
+                            "user_department": {"type": "string", "description": "Optional department filter (Engineering, Product, Design, etc.)"}
+                        },
+                        "required": ["user_name"]
+                    }
                 }
             }
-        }
         ]
-        # Function mapping for cleaner execution
+
+        # Function mapping for execution
         self.function_map = {
             "get_member_information": get_member_information,
             "get_process_information": get_process_information,
             "get_techstack_information": get_techstack_information,
             "get_user_project_assignment": get_user_project_assignment
         }
-        
+
         self.reset_conversation()
-        logger.info("OnboardingAssistant initialized successfully")
+        logger.info(
+            f"OnboardingAssistant initialized successfully (Session: {self.session_id})")
 
     def save_conversation_history(self, role: str, content: str):
-        """Save conversation history to a file."""
+        """Save conversation history with session tracking."""
         try:
+            os.makedirs(os.path.dirname(self.chat_history_file), exist_ok=True)
+
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            formatted_entry = f"[{timestamp}] [{self.session_id}] {role}: {content}\n"
+
             with open(self.chat_history_file, 'a', encoding='utf-8') as file:
-                file.write(f"{role}: {content}\n")
-            logger.info("Conversation history saved successfully")
+                file.write(formatted_entry)
+
+            logger.debug("Conversation history saved successfully")
         except Exception as e:
             logger.error(f"Error saving conversation history: {str(e)}")
-            
+
     def clear_conversation_history(self):
-        """Clear conversation history file."""
+        """Clear conversation history file safely."""
         try:
-            with open(self.chat_history_file, 'w', encoding='utf-8') as file:
-                file.write("")  # Clear the file
+            if os.path.exists(self.chat_history_file):
+                with open(self.chat_history_file, 'w', encoding='utf-8') as file:
+                    file.write(
+                        f"# Conversation history cleared at {datetime.now()}\n")
             logger.info("Conversation history cleared successfully")
         except Exception as e:
             logger.error(f"Error clearing conversation history: {str(e)}")
 
     def set_additional_context(self, context: str):
-        """Set additional context for the conversation."""
-        if not context:
-            logger.warning("No context provided to set")
-            return
-        
-        # Add context as a user message
+        """Set additional context with validation."""
+        if not context or not context.strip():
+            logger.warning("No valid context provided")
+            return False
+
+        context = context.strip()
         self.conversation_history.append({
             "role": "user",
-            "content": context
+            "content": f"[CONTEXT] {context}"
         })
         logger.info(f"Additional context set: {context[:100]}...")
+        return True
 
     def reset_conversation(self):
-        """Reset conversation history to initial state."""
+        """Reset conversation with prompts."""
         self.conversation_history = [
             {"role": "system", "content": self.system_prompt}
         ]
-        
+
+        # Add few-shot examples
         self.conversation_history.extend(Prompt.FEW_SHOT_EXAMPLES)
         self.clear_conversation_history()
-        logger.info("Conversation history reset")
+        logger.info("Conversation history reset with prompts")
 
-    def _validate_input(self, user_message: str) -> bool:
-        """Validate user input."""
-        if not user_message or not user_message.strip():
-            return False
-        if len(user_message.strip()) > 10000:  # Reasonable limit
-            logger.warning(f"Message too long: {len(user_message)} characters")
-            return False
-        return True
+    def _validate_input(self, user_message: str) -> Tuple[bool, str]:
+        """Enhanced input validation with specific error messages."""
+        if not user_message:
+            return False, "Please enter a message."
+
+        message = user_message.strip()
+        if not message:
+            return False, "Please enter a non-empty message."
+
+        if len(message) > 5000:  # Reasonable limit
+            return False, "Message is too long. Please keep it under 5000 characters."
+
+        # Check for potentially problematic content
+        if message.count('\n') > 50:  # Too many line breaks
+            return False, "Message has too many line breaks. Please format it more concisely."
+
+        return True, ""
 
     def _handle_tool_calls(self, response) -> str:
-        """Handle function calls from the AI response with improved error handling."""
+        """Enhanced tool call handling with better error recovery."""
         try:
             tool_calls = response.choices[0].message.tool_calls
             if not tool_calls:
-                return "No tool calls found in response"
-            
-            # First, add the assistant message with tool calls to conversation history
+                logger.warning("No tool calls found in response")
+                return "I need to look up some information but encountered an issue. Please try rephrasing your question."
+
+            # Add assistant message with tool calls
             assistant_message = {
                 "role": "assistant",
                 "content": response.choices[0].message.content,
                 "tool_calls": []
             }
-            
-            # Build the tool calls structure
+
+            # Process each tool call
             for tool_call in tool_calls:
                 assistant_message["tool_calls"].append({
                     "id": tool_call.id,
@@ -357,56 +638,82 @@ class OnboardingAssistant:
                         "arguments": tool_call.function.arguments
                     }
                 })
-            
-            # Add assistant message FIRST (this is crucial for the API)
+
             self.conversation_history.append(assistant_message)
-            
-            # Then execute functions and add tool responses
+
+            # Execute functions and collect results
             results = []
             for tool_call in tool_calls:
                 function_name = tool_call.function.name
-                
-                # Execute the function
+
                 if function_name in self.function_map:
                     try:
-                        function_result = self.function_map[function_name]()
-                        logger.info(f"Successfully executed function: {function_name}")
+                        # Parse arguments if provided
+                        if tool_call.function.arguments:
+                            try:
+                                args = json.loads(tool_call.function.arguments)
+                                if function_name == "get_user_project_assignment":
+                                    function_result = self.function_map[function_name](
+                                        **args)
+                                else:
+                                    function_result = self.function_map[function_name](
+                                    )
+                            except json.JSONDecodeError:
+                                function_result = self.function_map[function_name](
+                                )
+                        else:
+                            function_result = self.function_map[function_name](
+                            )
+
+                        logger.info(
+                            f"Successfully executed function: {function_name}")
                         results.append(function_result)
+
                     except Exception as e:
                         error_msg = f"Error executing {function_name}: {str(e)}"
                         logger.error(error_msg)
-                        results.append(error_msg)
+                        results.append(json.dumps({
+                            "error": "Function execution failed",
+                            "message": "Unable to retrieve information at this time. Please try again later.",
+                            "function": function_name
+                        }, indent=2))
                 else:
                     error_msg = f"Unknown function call: {function_name}"
                     logger.error(error_msg)
-                    results.append(error_msg)
-                
-                # Add tool response immediately after each function execution
+                    results.append(json.dumps({
+                        "error": "Unknown function",
+                        "message": "The requested operation is not available.",
+                        "function": function_name
+                    }, indent=2))
+
+                # Add tool response
                 self.conversation_history.append({
                     "role": "tool",
                     "content": str(results[-1]),
                     "tool_call_id": tool_call.id
                 })
-            
+
             return "\n".join(results) if len(results) > 1 else results[0]
-            
+
         except Exception as e:
             error_msg = f"Error handling tool calls: {str(e)}"
             logger.error(error_msg)
             logger.error(f"Full traceback: {traceback.format_exc()}")
-            return error_msg
+            return "I encountered an error while looking up information. Please try your question again."
 
     def _get_final_response(self) -> str:
-        """Get the final response from the AI after function execution."""
+        """Generate final response with fallback handling."""
         try:
             follow_up_response = AzureOpenAIClient.get_chat_completion(
-                self.conversation_history
+                self.conversation_history,
+                max_tokens=1500,  # Allow longer responses for  answers
+                temperature=0.7
             )
-            
-            if (follow_up_response and 
-                follow_up_response.choices and 
-                follow_up_response.choices[0].message.content):
-                
+
+            if (follow_up_response and
+                follow_up_response.choices and
+                    follow_up_response.choices[0].message.content):
+
                 final_response = follow_up_response.choices[0].message.content
                 self.conversation_history.append({
                     "role": "assistant",
@@ -416,160 +723,136 @@ class OnboardingAssistant:
                 return final_response
             else:
                 logger.warning("No follow-up response generated")
-                return "I've retrieved the information, but couldn't generate a proper response. Please try rephrasing your question."
-                
+                # Try to provide a helpful fallback based on the tool results
+                last_tool_result = None
+                for msg in reversed(self.conversation_history):
+                    if msg.get("role") == "tool":
+                        last_tool_result = msg.get("content")
+                        break
+
+                if last_tool_result:
+                    return "I've retrieved the information you requested. Here are the details:\n\n" + last_tool_result
+                else:
+                    return "I've looked up the information but couldn't format a proper response. Please try rephrasing your question."
+
         except Exception as e:
             error_msg = f"Error generating final response: {str(e)}"
             logger.error(error_msg)
-            return "I encountered an error while processing the information. Please try again."
+            return "I found some information but encountered an error while formatting the response. Please try asking your question again."
 
     def send_message(self, user_message: str) -> str:
-        self.save_conversation_history("user", user_message)
-        response = self.__send_message(user_message)
-        self.save_conversation_history("assistant", response)
-        return response
+        """Public interface for sending messages with full error handling."""
+        try:
+            self.save_conversation_history("user", user_message)
+            response = self.__send_message(user_message)
+            self.save_conversation_history("assistant", response)
+            return response
+        except Exception as e:
+            error_msg = f"Critical error in send_message: {str(e)}"
+            logger.error(error_msg)
+            return "I'm experiencing technical difficulties. Please try again in a moment."
 
+    @retry(wait=wait_random_exponential(min=5, max=60), stop=stop_after_attempt(5))
     def __send_message(self, user_message: str) -> str:
-        """Send a message to the assistant and get a response."""
+        """Internal message processing with  error handling."""
         try:
             # Validate input
-            if not self._validate_input(user_message):
-                return "Please provide a valid message (not empty and not too long)."
-        
-            # Add user message to conversation history
+            is_valid, error_message = self._validate_input(user_message)
+            if not is_valid:
+                return error_message
+
+            # Add user message to conversation
             self.conversation_history.append({
-                "role": "user", 
+                "role": "user",
                 "content": user_message.strip()
             })
             logger.info(f"Processing user message: {user_message[:100]}...")
-            
+
             # Get initial response from AI
             response = AzureOpenAIClient.get_chat_completion(
-                self.conversation_history, 
-                tools=self.function_definitions
+                self.conversation_history,
+                tools=self.function_definitions,
+                max_tokens=1500,
+                temperature=0.7
             )
-            
+
             if response is None:
                 logger.error("No response from Azure OpenAI")
-                # Remove the user message from history since we couldn't process it
-                self.conversation_history.pop()
-                return "I'm having trouble connecting to the AI service. Please try again in a moment."
-            # Check if the response has tool calls (function calls)
-            if (response.choices and 
-                response.choices[0].message.tool_calls):
-                
+                self.conversation_history.pop()  # Remove user message
+                return "I'm having trouble connecting to my knowledge base right now. Please try again in a few moments."
+
+            # Process response based on type
+            if (response.choices and response.choices[0].message.tool_calls):
                 logger.info("Processing function call(s)")
                 self._handle_tool_calls(response)
                 return self._get_final_response()
-                
             else:
-                # Regular response without function calls
-                if (response.choices and 
-                    response.choices[0].message.content):
-                    
+                # Direct response without function calls
+                if (response.choices and response.choices[0].message.content):
                     content = response.choices[0].message.content
                     self.conversation_history.append({
                         "role": "assistant",
                         "content": content
                     })
-                    logger.info("Regular response processed successfully")
+                    logger.info("Direct response processed successfully")
                     return content
                 else:
                     logger.warning("No content in response")
+                    self.conversation_history.pop()  # Remove user message
                     return "I didn't receive a proper response. Please try rephrasing your question."
-                    
-        except Exception as e:
-            error_msg = f"Unexpected error in send_message: {str(e)}"
-            logger.error(error_msg)
-            logger.error(f"Full traceback: {traceback.format_exc()}")
-            
-            # Try to recover by removing the last user message
+
+        except APIConnectionError as e:
+            logger.error(f"API connection error: {str(e)}")
             if self.conversation_history and self.conversation_history[-1]["role"] == "user":
                 self.conversation_history.pop()
-            
+            return "I'm having trouble connecting to my AI service. Please check your internet connection and try again."
+
+        except Exception as e:
+            error_msg = f"Unexpected error in __send_message: {str(e)}"
+            logger.error(error_msg)
+            logger.error(f"Full traceback: {traceback.format_exc()}")
+
+            # Clean up conversation history
+            if self.conversation_history and self.conversation_history[-1]["role"] == "user":
+                self.conversation_history.pop()
+
             return "I encountered an unexpected error. Please try again with a different question."
 
     def get_conversation_history(self) -> List[Dict[str, Any]]:
-        """Get a copy of the current conversation history."""
-        return [msg.copy() for msg in self.conversation_history]
-    
+        """Get conversation history with safe copying."""
+        try:
+            return [msg.copy() for msg in self.conversation_history]
+        except Exception as e:
+            logger.error(f"Error getting conversation history: {str(e)}")
+            return []
+
     def get_conversation_length(self) -> int:
-        """Get the number of messages in conversation history."""
-        return len(self.conversation_history)
-    
-    def clear_conversation_except_system(self):
-        """Clear conversation history but keep the system prompt."""
-        system_message = self.conversation_history[0] if self.conversation_history else None
-        self.conversation_history = [system_message] if system_message else []
-        logger.info("Conversation cleared except system message")
-    
+        """Get conversation length safely."""
+        try:
+            return len(self.conversation_history)
+        except Exception as e:
+            logger.error(f"Error getting conversation length: {str(e)}")
+            return 0
+
     def get_conversation_summary(self) -> Dict[str, Any]:
-        """Get a summary of the current conversation."""
-        user_messages = [msg for msg in self.conversation_history if msg["role"] == "user"]
-        assistant_messages = [msg for msg in self.conversation_history if msg["role"] == "assistant"]
-        tool_messages = [msg for msg in self.conversation_history if msg["role"] == "tool"]
-        
-        return {
-            "total_messages": len(self.conversation_history),
-            "user_messages": len(user_messages),
-            "assistant_messages": len(assistant_messages),
-            "tool_calls": len(tool_messages),
-            "conversation_started": len(self.conversation_history) > 1
-        }
+        """Get detailed conversation summary."""
+        try:
+            user_messages = [
+                msg for msg in self.conversation_history if msg["role"] == "user"]
+            assistant_messages = [
+                msg for msg in self.conversation_history if msg["role"] == "assistant"]
+            tool_messages = [
+                msg for msg in self.conversation_history if msg["role"] == "tool"]
 
-def main():
-    """Main function to run the interactive chat."""
-    try:
-        assistant = OnboardingAssistant()
-        print("🤖 Welcome to the Employee Onboarding Assistant!")
-        print("I can help you with information about team members, processes, and our tech stack.")
-        print("Type 'exit', 'quit', or 'bye' to end the conversation.")
-        print("Type 'reset' to start a new conversation.")
-        print("Type 'history' to see conversation summary.")
-        print("-" * 60)
-        
-        while True:
-            try:
-                user_input = input("\n💬 You: ").strip()
-                
-                if user_input.lower() in ["exit", "quit", "bye"]:
-                    print("\n👋 Thank you for using the Onboarding Assistant. Goodbye!")
-                    break
-                elif user_input.lower() == "reset":
-                    assistant.reset_conversation()
-                    print("\n🔄 Conversation reset. How can I help you?")
-                    continue
-                elif user_input.lower() == "history":
-                    summary = assistant.get_conversation_summary()
-                    print(f"\n📊 Conversation Summary:")
-                    print(f"   Total messages: {summary['total_messages']}")
-                    print(f"   Your messages: {summary['user_messages']}")
-                    print(f"   My responses: {summary['assistant_messages']}")
-                    print(f"   Information lookups: {summary['tool_calls']}")
-                    continue
-                elif not user_input:
-                    print("Please enter a message or type 'exit' to quit.")
-                    continue
-                
-                print("\n🤔 Thinking...")
-                response = assistant.send_message(user_input)
-                print(f"\n🤖 Assistant: {response}")
-                
-            except KeyboardInterrupt:
-                print("\n\n👋 Goodbye!")
-                break
-            except EOFError:
-                print("\n\n👋 Goodbye!")
-                break
-            except Exception as e:
-                logger.error(f"Error in main loop: {str(e)}")
-                print(f"\n❌ An unexpected error occurred: {str(e)}")
-                print("Please try again or type 'exit' to quit.")
-    
-    except Exception as e:
-        logger.error(f"Fatal error in main: {str(e)}")
-        print(f"❌ Failed to start the assistant: {str(e)}")
-        print("Please check your configuration and try again.")
-
-if __name__ == "__main__":
-    main()
+            return {
+                "session_id": self.session_id,
+                "total_messages": len(self.conversation_history),
+                "user_messages": len(user_messages),
+                "assistant_messages": len(assistant_messages),
+                "tool_calls": len(tool_messages),
+                "conversation_started": len(self.conversation_history) > 1,
+                "last_activity": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+        except Exception as e:
+            logger.error(f"Error generating conversation summary: {str(e)}")
+            return {"error": "Unable to generate summary"}

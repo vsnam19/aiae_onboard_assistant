@@ -14,20 +14,52 @@ def test_chatbot_queries():
     # Initialize the assistant
     try:
         assistant = OnboardingAssistant()
+        assistant.set_additional_context("My name is Nam Vu Son, My department is Engineering, and I am assigned to the Employee Onboarding Assistant project.")
         print("✅ Assistant initialized successfully")
     except Exception as e:
         print(f"❌ Failed to initialize assistant: {e}")
         return False
     
-    # Test queries
+    # Enhanced test queries covering  onboarding scenarios
     test_queries = [
-        "Who is Quinn Hernandez?",
+        # Basic team information queries
+        "Who is Drew Ramirez?",
         "Show me all team members in the DevOps department",
-        "What projects are currently active?",
-        "What technologies do we use for frontend development?",
-        "Tell me about our development processes",
         "Who are the Security Engineers in the company?",
-        "What is the Employee Onboarding Assistant project about?"
+        
+        # Project and assignment queries
+        "What projects are currently active?",
+        "What is the Employee Onboarding Assistant project about?",
+        "What project am I assigned to?",
+        
+        # Technology stack queries
+        "What technologies do we use for frontend development?",
+        "What database technologies do we use?",
+        "What AI/ML tools are available in our projects?",
+        
+        # Process and workflow queries
+        "Tell me about our development processes",
+        "What is our code review process?",
+        "How do we handle sprint planning?",
+        
+        # Edge cases and error handling
+        "Find information about John Doe",  # Non-existent user
+        "What's the tech stack for project XYZ?",  # Non-existent project
+        
+        # Natural language variations
+        "I'm new here, can you help me understand our team structure?",
+        "Where can I find documentation for our technology stack?",
+        "Who should I contact about project assignments?",
+        
+        # Out-of-scope queries (should be handled gracefully)
+        "What's my salary?",
+        "How do I book vacation time?",
+        "My laptop is broken, who do I contact?",
+        
+        # Complex multi-part queries
+        "Who is my manager and what project will I be working on?",
+        "What technologies should I learn for my role and who can help me?",
+        "Tell me about the team I'll be joining and our development process"
     ]
     
     print("\n🔍 Testing Queries:")
@@ -39,6 +71,16 @@ def test_chatbot_queries():
         
         try:
             response = assistant.send_message(query)
+            print(f"✅ Response: {response[:100]}...")
+            
+            # Basic validation of response
+            if len(response) < 10:
+                print("⚠️  Warning: Very short response")
+            elif "error" in response.lower():
+                print("⚠️  Warning: Error detected in response")
+            else:
+                print("✅ Response looks good")
+                
         except Exception as e:
             print(f"❌ Error: {e}")
     

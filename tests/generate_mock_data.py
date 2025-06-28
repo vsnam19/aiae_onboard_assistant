@@ -3,7 +3,7 @@
 Mock Data Generator for Employee Onboarding Assistant
 
 This script generates realistic mock data for testing the onboarding assistant system.
-It creates comprehensive datasets for:
+It creates  datasets for:
 - Member information (team members, roles, contacts)
 - Process information (workflows, procedures, policies)
 - Tech stack information (technologies, tools, frameworks)
@@ -145,7 +145,7 @@ class MockDataGenerator:
         return [f"{random.choice(first_names)} {random.choice(last_names)}" for _ in range(50)]
 
     def generate_member_info(self, num_projects: int = 5, members_per_project: int = 8) -> List[Dict[str, Any]]:
-        """Generate comprehensive member information for multiple projects."""
+        """Generate  member information for multiple projects."""
         names = self.generate_names()
         projects = []
         
@@ -240,7 +240,7 @@ class MockDataGenerator:
                 },
                 {
                     "name": "Quality Assurance",
-                    "description": "Comprehensive testing of all system components",
+                    "description": " testing of all system components",
                     "duration_days": 14,
                     "deliverables": ["Test Cases", "Bug Reports", "Performance Reports", "Security Audit"]
                 },
@@ -314,7 +314,7 @@ class MockDataGenerator:
         return projects
 
     def generate_techstack_info(self, num_projects: int = 5) -> List[Dict[str, Any]]:
-        """Generate comprehensive technology stack information."""
+        """Generate  technology stack information."""
         projects = []
         
         for i in range(num_projects):

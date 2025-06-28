@@ -162,7 +162,7 @@
       {
         "process_id": "PROC001-05",
         "process_name": "Quality Assurance",
-        "description": "Comprehensive testing of all system components",
+        "description": " testing of all system components",
         "category": "Onboarding Process",
         "status": "planned",
         "priority": "low",
@@ -482,7 +482,7 @@
       {
         "process_id": "PROC002-05",
         "process_name": "Quality Assurance",
-        "description": "Comprehensive testing of all system components",
+        "description": " testing of all system components",
         "category": "Onboarding Process",
         "status": "completed",
         "priority": "high",
@@ -801,7 +801,7 @@
       {
         "process_id": "PROC003-05",
         "process_name": "Quality Assurance",
-        "description": "Comprehensive testing of all system components",
+        "description": " testing of all system components",
         "category": "Documentation Process",
         "status": "completed",
         "priority": "high",
@@ -1127,7 +1127,7 @@
       {
         "process_id": "PROC004-05",
         "process_name": "Quality Assurance",
-        "description": "Comprehensive testing of all system components",
+        "description": " testing of all system components",
         "category": "Change Management",
         "status": "completed",
         "priority": "low",
@@ -1451,7 +1451,7 @@
       {
         "process_id": "PROC005-05",
         "process_name": "Quality Assurance",
-        "description": "Comprehensive testing of all system components",
+        "description": " testing of all system components",
         "category": "Performance Review",
         "status": "completed",
         "priority": "medium",
