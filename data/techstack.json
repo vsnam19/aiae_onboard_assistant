@@ -5,10 +5,38 @@
     "tech_stack": {
       "frontend": [
         {
+          "technology": "Next.js",
+          "version": "12.x",
+          "purpose": "React framework",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/next.js",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Next.js Training",
+            "Official Next.js Documentation",
+            "Company Next.js Best Practices"
+          ]
+        },
+        {
+          "technology": "Angular",
+          "version": "16.x",
+          "purpose": "Application framework",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/angular",
+          "support_team": "DevOps Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Angular Training",
+            "Official Angular Documentation",
+            "Company Angular Best Practices"
+          ]
+        },
+        {
           "technology": "Streamlit",
           "version": "1.27",
           "purpose": "Python web apps",
-          "status": "deprecated",
+          "status": "active",
           "documentation_url": "https://docs.company.com/streamlit",
           "support_team": "Engineering Team",
           "license": "Commercial",
@@ -22,9 +50,9 @@
           "technology": "React",
           "version": "17.x",
           "purpose": "UI framework",
-          "status": "experimental",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/react",
-          "support_team": "DevOps Team",
+          "support_team": "Platform Team",
           "license": "MIT",
           "learning_resources": [
             "Internal React Training",
@@ -33,43 +61,57 @@
           ]
         },
         {
-          "technology": "Tailwind CSS",
-          "version": "3.x",
-          "purpose": "Utility-first CSS",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/tailwind-css",
-          "support_team": "Engineering Team",
-          "license": "Open Source",
+          "technology": "Material-UI",
+          "version": "5.x",
+          "purpose": "React components",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/material-ui",
+          "support_team": "Platform Team",
+          "license": "Commercial",
           "learning_resources": [
-            "Internal Tailwind CSS Training",
-            "Official Tailwind CSS Documentation",
-            "Company Tailwind CSS Best Practices"
+            "Internal Material-UI Training",
+            "Official Material-UI Documentation",
+            "Company Material-UI Best Practices"
           ]
         },
         {
-          "technology": "Bootstrap",
+          "technology": "TypeScript",
           "version": "5.x",
-          "purpose": "CSS framework",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/bootstrap",
-          "support_team": "Engineering Team",
+          "purpose": "Type-safe JavaScript",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/typescript",
+          "support_team": "Platform Team",
           "license": "Apache 2.0",
           "learning_resources": [
-            "Internal Bootstrap Training",
-            "Official Bootstrap Documentation",
-            "Company Bootstrap Best Practices"
+            "Internal TypeScript Training",
+            "Official TypeScript Documentation",
+            "Company TypeScript Best Practices"
           ]
         }
       ],
       "backend": [
         {
+          "technology": "FastAPI",
+          "version": "0.104",
+          "purpose": "Modern API framework",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/fastapi",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal FastAPI Training",
+            "Official FastAPI Documentation",
+            "Company FastAPI Best Practices"
+          ]
+        },
+        {
           "technology": "Spring Boot",
           "version": "2.x",
           "purpose": "Java framework",
-          "status": "active",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/spring-boot",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
+          "support_team": "Engineering Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal Spring Boot Training",
             "Official Spring Boot Documentation",
@@ -77,43 +119,57 @@
           ]
         },
         {
+          "technology": "Flask",
+          "version": "2.x",
+          "purpose": "Micro web framework",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/flask",
+          "support_team": "DevOps Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Flask Training",
+            "Official Flask Documentation",
+            "Company Flask Best Practices"
+          ]
+        },
+        {
           "technology": "Node.js",
-          "version": "18.x",
+          "version": "20.x",
           "purpose": "JavaScript runtime",
-          "status": "active",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/node.js",
           "support_team": "Platform Team",
-          "license": "Apache 2.0",
+          "license": "Commercial",
           "learning_resources": [
             "Internal Node.js Training",
             "Official Node.js Documentation",
             "Company Node.js Best Practices"
           ]
+        },
+        {
+          "technology": ".NET Core",
+          "version": "7.x",
+          "purpose": "Cross-platform framework",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/.net-core",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal .NET Core Training",
+            "Official .NET Core Documentation",
+            "Company .NET Core Best Practices"
+          ]
         }
       ],
       "database": [
         {
-          "technology": "MongoDB",
-          "version": "6.x",
-          "purpose": "Document database",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/mongodb",
-          "support_team": "DevOps Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal MongoDB Training",
-            "Official MongoDB Documentation",
-            "Company MongoDB Best Practices"
-          ]
-        },
-        {
           "technology": "PostgreSQL",
-          "version": "14.x",
+          "version": "15.x",
           "purpose": "Relational database",
-          "status": "active",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/postgresql",
           "support_team": "Platform Team",
-          "license": "MIT",
+          "license": "Commercial",
           "learning_resources": [
             "Internal PostgreSQL Training",
             "Official PostgreSQL Documentation",
@@ -127,7 +183,7 @@
           "status": "active",
           "documentation_url": "https://docs.company.com/influxdb",
           "support_team": "Platform Team",
-          "license": "Commercial",
+          "license": "Open Source",
           "learning_resources": [
             "Internal InfluxDB Training",
             "Official InfluxDB Documentation",
@@ -135,43 +191,29 @@
           ]
         },
         {
-          "technology": "Elasticsearch",
-          "version": "8.x",
-          "purpose": "Search engine",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/elasticsearch",
-          "support_team": "Engineering Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Elasticsearch Training",
-            "Official Elasticsearch Documentation",
-            "Company Elasticsearch Best Practices"
-          ]
-        },
-        {
-          "technology": "Redis",
+          "technology": "MongoDB",
           "version": "7.x",
-          "purpose": "In-memory data store",
+          "purpose": "Document database",
           "status": "active",
-          "documentation_url": "https://docs.company.com/redis",
+          "documentation_url": "https://docs.company.com/mongodb",
           "support_team": "DevOps Team",
           "license": "Apache 2.0",
           "learning_resources": [
-            "Internal Redis Training",
-            "Official Redis Documentation",
-            "Company Redis Best Practices"
+            "Internal MongoDB Training",
+            "Official MongoDB Documentation",
+            "Company MongoDB Best Practices"
           ]
         }
       ],
       "ai_ml": [
         {
           "technology": "PyTorch",
-          "version": "2.1",
+          "version": "2.0",
           "purpose": "Deep learning framework",
           "status": "experimental",
           "documentation_url": "https://docs.company.com/pytorch",
-          "support_team": "Platform Team",
-          "license": "Open Source",
+          "support_team": "DevOps Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal PyTorch Training",
             "Official PyTorch Documentation",
@@ -182,10 +224,10 @@
           "technology": "Pandas",
           "version": "2.x",
           "purpose": "Data manipulation",
-          "status": "deprecated",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/pandas",
-          "support_team": "Engineering Team",
-          "license": "Apache 2.0",
+          "support_team": "Platform Team",
+          "license": "Open Source",
           "learning_resources": [
             "Internal Pandas Training",
             "Official Pandas Documentation",
@@ -193,13 +235,27 @@
           ]
         },
         {
+          "technology": "Azure OpenAI",
+          "version": "2023-12-01",
+          "purpose": "AI services",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/azure-openai",
+          "support_team": "Engineering Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Azure OpenAI Training",
+            "Official Azure OpenAI Documentation",
+            "Company Azure OpenAI Best Practices"
+          ]
+        },
+        {
           "technology": "TensorFlow",
           "version": "2.15",
           "purpose": "ML framework",
-          "status": "active",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/tensorflow",
-          "support_team": "Platform Team",
-          "license": "Open Source",
+          "support_team": "DevOps Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal TensorFlow Training",
             "Official TensorFlow Documentation",
@@ -207,27 +263,13 @@
           ]
         },
         {
-          "technology": "NumPy",
-          "version": "1.24",
-          "purpose": "Numerical computing",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/numpy",
-          "support_team": "Engineering Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal NumPy Training",
-            "Official NumPy Documentation",
-            "Company NumPy Best Practices"
-          ]
-        },
-        {
           "technology": "LangChain",
           "version": "0.1",
           "purpose": "LLM applications",
-          "status": "active",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/langchain",
           "support_team": "DevOps Team",
-          "license": "Apache 2.0",
+          "license": "Commercial",
           "learning_resources": [
             "Internal LangChain Training",
             "Official LangChain Documentation",
@@ -237,42 +279,112 @@
       ],
       "cloud": [
         {
-          "technology": "Docker",
-          "version": "23.x",
-          "purpose": "Containerization",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/docker",
-          "support_team": "DevOps Team",
+          "technology": "Terraform",
+          "version": "1.5",
+          "purpose": "Infrastructure as code",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/terraform",
+          "support_team": "Platform Team",
           "license": "Open Source",
           "learning_resources": [
-            "Internal Docker Training",
-            "Official Docker Documentation",
-            "Company Docker Best Practices"
+            "Internal Terraform Training",
+            "Official Terraform Documentation",
+            "Company Terraform Best Practices"
           ]
         },
         {
-          "technology": "Kubernetes",
-          "version": "1.28",
-          "purpose": "Container orchestration",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/kubernetes",
+          "technology": "AWS",
+          "version": "Latest",
+          "purpose": "Cloud platform",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/aws",
           "support_team": "DevOps Team",
-          "license": "MIT",
+          "license": "Open Source",
           "learning_resources": [
-            "Internal Kubernetes Training",
-            "Official Kubernetes Documentation",
-            "Company Kubernetes Best Practices"
+            "Internal AWS Training",
+            "Official AWS Documentation",
+            "Company AWS Best Practices"
+          ]
+        },
+        {
+          "technology": "Azure",
+          "version": "Latest",
+          "purpose": "Cloud platform",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/azure",
+          "support_team": "DevOps Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Azure Training",
+            "Official Azure Documentation",
+            "Company Azure Best Practices"
           ]
         }
       ],
       "tools": [
         {
+          "technology": "GitHub Actions",
+          "version": "Latest",
+          "purpose": "CI/CD",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/github-actions",
+          "support_team": "DevOps Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal GitHub Actions Training",
+            "Official GitHub Actions Documentation",
+            "Company GitHub Actions Best Practices"
+          ]
+        },
+        {
+          "technology": "Postman",
+          "version": "Latest",
+          "purpose": "API testing",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/postman",
+          "support_team": "Engineering Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Postman Training",
+            "Official Postman Documentation",
+            "Company Postman Best Practices"
+          ]
+        },
+        {
+          "technology": "Jenkins",
+          "version": "2.x",
+          "purpose": "CI/CD",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/jenkins",
+          "support_team": "Engineering Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Jenkins Training",
+            "Official Jenkins Documentation",
+            "Company Jenkins Best Practices"
+          ]
+        },
+        {
+          "technology": "GitHub",
+          "version": "Latest",
+          "purpose": "Code hosting",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/github",
+          "support_team": "Engineering Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal GitHub Training",
+            "Official GitHub Documentation",
+            "Company GitHub Best Practices"
+          ]
+        },
+        {
           "technology": "VS Code",
           "version": "Latest",
           "purpose": "Code editor",
-          "status": "deprecated",
+          "status": "active",
           "documentation_url": "https://docs.company.com/vs-code",
-          "support_team": "DevOps Team",
+          "support_team": "Platform Team",
           "license": "Open Source",
           "learning_resources": [
             "Internal VS Code Training",
@@ -281,26 +393,408 @@
           ]
         },
         {
-          "technology": "Git",
-          "version": "2.x",
-          "purpose": "Version control",
+          "technology": "Slack",
+          "version": "Latest",
+          "purpose": "Communication",
           "status": "experimental",
-          "documentation_url": "https://docs.company.com/git",
+          "documentation_url": "https://docs.company.com/slack",
+          "support_team": "DevOps Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Slack Training",
+            "Official Slack Documentation",
+            "Company Slack Best Practices"
+          ]
+        }
+      ]
+    },
+    "architecture": {
+      "pattern": "Microservices",
+      "deployment": "Hybrid Cloud",
+      "scalability": "Vertical"
+    },
+    "development_practices": {
+      "methodology": "Agile",
+      "version_control": "Git",
+      "ci_cd": "Azure DevOps",
+      "testing": [
+        "Unit Testing",
+        "Integration Testing",
+        "E2E Testing"
+      ],
+      "code_review": "Pull Request based review",
+      "documentation": "Confluence"
+    },
+    "security": {
+      "authentication": "Multi-factor",
+      "authorization": "Role-based Access Control (RBAC)",
+      "data_encryption": "AES-256",
+      "security_scanning": [
+        "SAST",
+        "DAST",
+        "Dependency Scanning"
+      ],
+      "compliance": "HIPAA"
+    }
+  },
+  {
+    "project_code": "PROJ002",
+    "project_name": "Project 2",
+    "tech_stack": {
+      "frontend": [
+        {
+          "technology": "Angular",
+          "version": "15.x",
+          "purpose": "Application framework",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/angular",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Angular Training",
+            "Official Angular Documentation",
+            "Company Angular Best Practices"
+          ]
+        },
+        {
+          "technology": "React",
+          "version": "17.x",
+          "purpose": "UI framework",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/react",
+          "support_team": "DevOps Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal React Training",
+            "Official React Documentation",
+            "Company React Best Practices"
+          ]
+        },
+        {
+          "technology": "Next.js",
+          "version": "12.x",
+          "purpose": "React framework",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/next.js",
           "support_team": "Engineering Team",
           "license": "Commercial",
           "learning_resources": [
-            "Internal Git Training",
-            "Official Git Documentation",
-            "Company Git Best Practices"
+            "Internal Next.js Training",
+            "Official Next.js Documentation",
+            "Company Next.js Best Practices"
+          ]
+        },
+        {
+          "technology": "TypeScript",
+          "version": "5.x",
+          "purpose": "Type-safe JavaScript",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/typescript",
+          "support_team": "Platform Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal TypeScript Training",
+            "Official TypeScript Documentation",
+            "Company TypeScript Best Practices"
+          ]
+        },
+        {
+          "technology": "Vue.js",
+          "version": "3.x",
+          "purpose": "Progressive framework",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/vue.js",
+          "support_team": "Platform Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Vue.js Training",
+            "Official Vue.js Documentation",
+            "Company Vue.js Best Practices"
+          ]
+        },
+        {
+          "technology": "Tailwind CSS",
+          "version": "3.x",
+          "purpose": "Utility-first CSS",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/tailwind-css",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Tailwind CSS Training",
+            "Official Tailwind CSS Documentation",
+            "Company Tailwind CSS Best Practices"
+          ]
+        }
+      ],
+      "backend": [
+        {
+          "technology": "Spring Boot",
+          "version": "2.x",
+          "purpose": "Java framework",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/spring-boot",
+          "support_team": "DevOps Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Spring Boot Training",
+            "Official Spring Boot Documentation",
+            "Company Spring Boot Best Practices"
+          ]
+        },
+        {
+          "technology": "FastAPI",
+          "version": "0.104",
+          "purpose": "Modern API framework",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/fastapi",
+          "support_team": "Engineering Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal FastAPI Training",
+            "Official FastAPI Documentation",
+            "Company FastAPI Best Practices"
+          ]
+        }
+      ],
+      "database": [
+        {
+          "technology": "MongoDB",
+          "version": "6.x",
+          "purpose": "Document database",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/mongodb",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal MongoDB Training",
+            "Official MongoDB Documentation",
+            "Company MongoDB Best Practices"
+          ]
+        },
+        {
+          "technology": "Redis",
+          "version": "7.x",
+          "purpose": "In-memory data store",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/redis",
+          "support_team": "Engineering Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Redis Training",
+            "Official Redis Documentation",
+            "Company Redis Best Practices"
+          ]
+        },
+        {
+          "technology": "Elasticsearch",
+          "version": "8.x",
+          "purpose": "Search engine",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/elasticsearch",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Elasticsearch Training",
+            "Official Elasticsearch Documentation",
+            "Company Elasticsearch Best Practices"
+          ]
+        },
+        {
+          "technology": "MySQL",
+          "version": "8.x",
+          "purpose": "Relational database",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/mysql",
+          "support_team": "Engineering Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal MySQL Training",
+            "Official MySQL Documentation",
+            "Company MySQL Best Practices"
+          ]
+        }
+      ],
+      "ai_ml": [
+        {
+          "technology": "PyTorch",
+          "version": "2.0",
+          "purpose": "Deep learning framework",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/pytorch",
+          "support_team": "DevOps Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal PyTorch Training",
+            "Official PyTorch Documentation",
+            "Company PyTorch Best Practices"
+          ]
+        },
+        {
+          "technology": "Pandas",
+          "version": "2.x",
+          "purpose": "Data manipulation",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/pandas",
+          "support_team": "Platform Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Pandas Training",
+            "Official Pandas Documentation",
+            "Company Pandas Best Practices"
+          ]
+        },
+        {
+          "technology": "Scikit-learn",
+          "version": "1.2",
+          "purpose": "ML library",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/scikit-learn",
+          "support_team": "DevOps Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Scikit-learn Training",
+            "Official Scikit-learn Documentation",
+            "Company Scikit-learn Best Practices"
+          ]
+        },
+        {
+          "technology": "OpenAI API",
+          "version": "v1",
+          "purpose": "Language models",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/openai-api",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal OpenAI API Training",
+            "Official OpenAI API Documentation",
+            "Company OpenAI API Best Practices"
+          ]
+        }
+      ],
+      "cloud": [
+        {
+          "technology": "AWS",
+          "version": "Latest",
+          "purpose": "Cloud platform",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/aws",
+          "support_team": "DevOps Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal AWS Training",
+            "Official AWS Documentation",
+            "Company AWS Best Practices"
+          ]
+        },
+        {
+          "technology": "Google Cloud",
+          "version": "Latest",
+          "purpose": "Cloud platform",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/google-cloud",
+          "support_team": "DevOps Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Google Cloud Training",
+            "Official Google Cloud Documentation",
+            "Company Google Cloud Best Practices"
+          ]
+        },
+        {
+          "technology": "Kubernetes",
+          "version": "1.28",
+          "purpose": "Container orchestration",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/kubernetes",
+          "support_team": "Platform Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Kubernetes Training",
+            "Official Kubernetes Documentation",
+            "Company Kubernetes Best Practices"
+          ]
+        },
+        {
+          "technology": "Terraform",
+          "version": "1.6",
+          "purpose": "Infrastructure as code",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/terraform",
+          "support_team": "Engineering Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Terraform Training",
+            "Official Terraform Documentation",
+            "Company Terraform Best Practices"
+          ]
+        },
+        {
+          "technology": "Docker",
+          "version": "23.x",
+          "purpose": "Containerization",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/docker",
+          "support_team": "DevOps Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Docker Training",
+            "Official Docker Documentation",
+            "Company Docker Best Practices"
+          ]
+        },
+        {
+          "technology": "Azure",
+          "version": "Latest",
+          "purpose": "Cloud platform",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/azure",
+          "support_team": "Platform Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Azure Training",
+            "Official Azure Documentation",
+            "Company Azure Best Practices"
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "technology": "VS Code",
+          "version": "Latest",
+          "purpose": "Code editor",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/vs-code",
+          "support_team": "Engineering Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal VS Code Training",
+            "Official VS Code Documentation",
+            "Company VS Code Best Practices"
+          ]
+        },
+        {
+          "technology": "GitHub",
+          "version": "Latest",
+          "purpose": "Code hosting",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/github",
+          "support_team": "Platform Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal GitHub Training",
+            "Official GitHub Documentation",
+            "Company GitHub Best Practices"
           ]
         },
         {
           "technology": "Jira",
           "version": "Latest",
           "purpose": "Project management",
-          "status": "experimental",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/jira",
-          "support_team": "DevOps Team",
+          "support_team": "Platform Team",
           "license": "Open Source",
           "learning_resources": [
             "Internal Jira Training",
@@ -309,24 +803,52 @@
           ]
         },
         {
-          "technology": "Jenkins",
+          "technology": "Git",
           "version": "2.x",
-          "purpose": "CI/CD",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/jenkins",
-          "support_team": "Engineering Team",
-          "license": "Commercial",
+          "purpose": "Version control",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/git",
+          "support_team": "Platform Team",
+          "license": "Apache 2.0",
           "learning_resources": [
-            "Internal Jenkins Training",
-            "Official Jenkins Documentation",
-            "Company Jenkins Best Practices"
+            "Internal Git Training",
+            "Official Git Documentation",
+            "Company Git Best Practices"
+          ]
+        },
+        {
+          "technology": "Confluence",
+          "version": "Latest",
+          "purpose": "Documentation",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/confluence",
+          "support_team": "DevOps Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Confluence Training",
+            "Official Confluence Documentation",
+            "Company Confluence Best Practices"
+          ]
+        },
+        {
+          "technology": "Slack",
+          "version": "Latest",
+          "purpose": "Communication",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/slack",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Slack Training",
+            "Official Slack Documentation",
+            "Company Slack Best Practices"
           ]
         }
       ]
     },
     "architecture": {
-      "pattern": "Monolithic",
-      "deployment": "Hybrid Cloud",
+      "pattern": "Hybrid",
+      "deployment": "On-premise",
       "scalability": "Vertical"
     },
     "development_practices": {
@@ -339,364 +861,10 @@
         "E2E Testing"
       ],
       "code_review": "Pull Request based review",
-      "documentation": "Notion"
+      "documentation": "Wiki"
     },
     "security": {
-      "authentication": "JWT",
-      "authorization": "Role-based Access Control (RBAC)",
-      "data_encryption": "AES-256",
-      "security_scanning": [
-        "SAST",
-        "DAST",
-        "Dependency Scanning"
-      ],
-      "compliance": "SOC 2"
-    }
-  },
-  {
-    "project_code": "PROJ002",
-    "project_name": "Project 2",
-    "tech_stack": {
-      "frontend": [
-        {
-          "technology": "Streamlit",
-          "version": "1.28",
-          "purpose": "Python web apps",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/streamlit",
-          "support_team": "Platform Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal Streamlit Training",
-            "Official Streamlit Documentation",
-            "Company Streamlit Best Practices"
-          ]
-        },
-        {
-          "technology": "Material-UI",
-          "version": "5.x",
-          "purpose": "React components",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/material-ui",
-          "support_team": "Platform Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Material-UI Training",
-            "Official Material-UI Documentation",
-            "Company Material-UI Best Practices"
-          ]
-        },
-        {
-          "technology": "Angular",
-          "version": "15.x",
-          "purpose": "Application framework",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/angular",
-          "support_team": "DevOps Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal Angular Training",
-            "Official Angular Documentation",
-            "Company Angular Best Practices"
-          ]
-        },
-        {
-          "technology": "Bootstrap",
-          "version": "5.x",
-          "purpose": "CSS framework",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/bootstrap",
-          "support_team": "Platform Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal Bootstrap Training",
-            "Official Bootstrap Documentation",
-            "Company Bootstrap Best Practices"
-          ]
-        },
-        {
-          "technology": "Vue.js",
-          "version": "3.x",
-          "purpose": "Progressive framework",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/vue.js",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Vue.js Training",
-            "Official Vue.js Documentation",
-            "Company Vue.js Best Practices"
-          ]
-        },
-        {
-          "technology": "React",
-          "version": "18.x",
-          "purpose": "UI framework",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/react",
-          "support_team": "Platform Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal React Training",
-            "Official React Documentation",
-            "Company React Best Practices"
-          ]
-        }
-      ],
-      "backend": [
-        {
-          "technology": "Go",
-          "version": "1.20",
-          "purpose": "Programming language",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/go",
-          "support_team": "Platform Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal Go Training",
-            "Official Go Documentation",
-            "Company Go Best Practices"
-          ]
-        },
-        {
-          "technology": "Express.js",
-          "version": "4.x",
-          "purpose": "Node.js framework",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/express.js",
-          "support_team": "DevOps Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Express.js Training",
-            "Official Express.js Documentation",
-            "Company Express.js Best Practices"
-          ]
-        }
-      ],
-      "database": [
-        {
-          "technology": "MySQL",
-          "version": "8.x",
-          "purpose": "Relational database",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/mysql",
-          "support_team": "Engineering Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal MySQL Training",
-            "Official MySQL Documentation",
-            "Company MySQL Best Practices"
-          ]
-        },
-        {
-          "technology": "Redis",
-          "version": "7.x",
-          "purpose": "In-memory data store",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/redis",
-          "support_team": "Platform Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal Redis Training",
-            "Official Redis Documentation",
-            "Company Redis Best Practices"
-          ]
-        }
-      ],
-      "ai_ml": [
-        {
-          "technology": "TensorFlow",
-          "version": "2.15",
-          "purpose": "ML framework",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/tensorflow",
-          "support_team": "Engineering Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal TensorFlow Training",
-            "Official TensorFlow Documentation",
-            "Company TensorFlow Best Practices"
-          ]
-        },
-        {
-          "technology": "Pandas",
-          "version": "2.x",
-          "purpose": "Data manipulation",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/pandas",
-          "support_team": "Platform Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Pandas Training",
-            "Official Pandas Documentation",
-            "Company Pandas Best Practices"
-          ]
-        },
-        {
-          "technology": "NumPy",
-          "version": "1.24",
-          "purpose": "Numerical computing",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/numpy",
-          "support_team": "Engineering Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal NumPy Training",
-            "Official NumPy Documentation",
-            "Company NumPy Best Practices"
-          ]
-        },
-        {
-          "technology": "Hugging Face",
-          "version": "4.x",
-          "purpose": "NLP models",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/hugging-face",
-          "support_team": "Platform Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Hugging Face Training",
-            "Official Hugging Face Documentation",
-            "Company Hugging Face Best Practices"
-          ]
-        }
-      ],
-      "cloud": [
-        {
-          "technology": "Kubernetes",
-          "version": "1.28",
-          "purpose": "Container orchestration",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/kubernetes",
-          "support_team": "DevOps Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal Kubernetes Training",
-            "Official Kubernetes Documentation",
-            "Company Kubernetes Best Practices"
-          ]
-        },
-        {
-          "technology": "Google Cloud",
-          "version": "Latest",
-          "purpose": "Cloud platform",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/google-cloud",
-          "support_team": "Platform Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Google Cloud Training",
-            "Official Google Cloud Documentation",
-            "Company Google Cloud Best Practices"
-          ]
-        },
-        {
-          "technology": "Terraform",
-          "version": "1.5",
-          "purpose": "Infrastructure as code",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/terraform",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Terraform Training",
-            "Official Terraform Documentation",
-            "Company Terraform Best Practices"
-          ]
-        },
-        {
-          "technology": "Docker",
-          "version": "23.x",
-          "purpose": "Containerization",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/docker",
-          "support_team": "Engineering Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Docker Training",
-            "Official Docker Documentation",
-            "Company Docker Best Practices"
-          ]
-        },
-        {
-          "technology": "AWS",
-          "version": "Latest",
-          "purpose": "Cloud platform",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/aws",
-          "support_team": "Platform Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal AWS Training",
-            "Official AWS Documentation",
-            "Company AWS Best Practices"
-          ]
-        },
-        {
-          "technology": "Azure",
-          "version": "Latest",
-          "purpose": "Cloud platform",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/azure",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Azure Training",
-            "Official Azure Documentation",
-            "Company Azure Best Practices"
-          ]
-        }
-      ],
-      "tools": [
-        {
-          "technology": "Jira",
-          "version": "Latest",
-          "purpose": "Project management",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/jira",
-          "support_team": "Platform Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Jira Training",
-            "Official Jira Documentation",
-            "Company Jira Best Practices"
-          ]
-        },
-        {
-          "technology": "GitHub Actions",
-          "version": "Latest",
-          "purpose": "CI/CD",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/github-actions",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal GitHub Actions Training",
-            "Official GitHub Actions Documentation",
-            "Company GitHub Actions Best Practices"
-          ]
-        }
-      ]
-    },
-    "architecture": {
-      "pattern": "Microservices",
-      "deployment": "On-premise",
-      "scalability": "Vertical"
-    },
-    "development_practices": {
-      "methodology": "DevOps",
-      "version_control": "Git",
-      "ci_cd": "Jenkins",
-      "testing": [
-        "Unit Testing",
-        "Integration Testing",
-        "E2E Testing"
-      ],
-      "code_review": "Pull Request based review",
-      "documentation": "Notion"
-    },
-    "security": {
-      "authentication": "JWT",
+      "authentication": "Multi-factor",
       "authorization": "Role-based Access Control (RBAC)",
       "data_encryption": "AES-256",
       "security_scanning": [
@@ -713,13 +881,27 @@
     "tech_stack": {
       "frontend": [
         {
+          "technology": "React",
+          "version": "17.x",
+          "purpose": "UI framework",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/react",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal React Training",
+            "Official React Documentation",
+            "Company React Best Practices"
+          ]
+        },
+        {
           "technology": "Angular",
           "version": "15.x",
           "purpose": "Application framework",
           "status": "deprecated",
           "documentation_url": "https://docs.company.com/angular",
-          "support_team": "DevOps Team",
-          "license": "Apache 2.0",
+          "support_team": "Engineering Team",
+          "license": "Commercial",
           "learning_resources": [
             "Internal Angular Training",
             "Official Angular Documentation",
@@ -727,47 +909,89 @@
           ]
         },
         {
-          "technology": "Bootstrap",
-          "version": "5.x",
-          "purpose": "CSS framework",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/bootstrap",
+          "technology": "Tailwind CSS",
+          "version": "3.x",
+          "purpose": "Utility-first CSS",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/tailwind-css",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Tailwind CSS Training",
+            "Official Tailwind CSS Documentation",
+            "Company Tailwind CSS Best Practices"
+          ]
+        },
+        {
+          "technology": "TypeScript",
+          "version": "4.x",
+          "purpose": "Type-safe JavaScript",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/typescript",
           "support_team": "DevOps Team",
           "license": "Open Source",
           "learning_resources": [
-            "Internal Bootstrap Training",
-            "Official Bootstrap Documentation",
-            "Company Bootstrap Best Practices"
+            "Internal TypeScript Training",
+            "Official TypeScript Documentation",
+            "Company TypeScript Best Practices"
+          ]
+        },
+        {
+          "technology": "Streamlit",
+          "version": "1.27",
+          "purpose": "Python web apps",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/streamlit",
+          "support_team": "DevOps Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Streamlit Training",
+            "Official Streamlit Documentation",
+            "Company Streamlit Best Practices"
           ]
         }
       ],
       "backend": [
         {
-          "technology": "FastAPI",
-          "version": "0.104",
-          "purpose": "Modern API framework",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/fastapi",
+          "technology": "Python",
+          "version": "3.9",
+          "purpose": "Programming language",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/python",
           "support_team": "DevOps Team",
           "license": "Apache 2.0",
           "learning_resources": [
-            "Internal FastAPI Training",
-            "Official FastAPI Documentation",
-            "Company FastAPI Best Practices"
+            "Internal Python Training",
+            "Official Python Documentation",
+            "Company Python Best Practices"
           ]
         },
         {
-          "technology": "Node.js",
-          "version": "20.x",
-          "purpose": "JavaScript runtime",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/node.js",
-          "support_team": "Platform Team",
-          "license": "Commercial",
+          "technology": "Express.js",
+          "version": "4.x",
+          "purpose": "Node.js framework",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/express.js",
+          "support_team": "Engineering Team",
+          "license": "MIT",
           "learning_resources": [
-            "Internal Node.js Training",
-            "Official Node.js Documentation",
-            "Company Node.js Best Practices"
+            "Internal Express.js Training",
+            "Official Express.js Documentation",
+            "Company Express.js Best Practices"
+          ]
+        },
+        {
+          "technology": "Go",
+          "version": "1.20",
+          "purpose": "Programming language",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/go",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Go Training",
+            "Official Go Documentation",
+            "Company Go Best Practices"
           ]
         },
         {
@@ -785,87 +1009,73 @@
           ]
         },
         {
-          "technology": "Express.js",
-          "version": "4.x",
-          "purpose": "Node.js framework",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/express.js",
-          "support_team": "Engineering Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal Express.js Training",
-            "Official Express.js Documentation",
-            "Company Express.js Best Practices"
-          ]
-        },
-        {
-          "technology": "Django",
-          "version": "3.x",
-          "purpose": "Web framework",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/django",
-          "support_team": "Platform Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal Django Training",
-            "Official Django Documentation",
-            "Company Django Best Practices"
-          ]
-        },
-        {
           "technology": "Spring Boot",
           "version": "3.x",
           "purpose": "Java framework",
-          "status": "deprecated",
+          "status": "active",
           "documentation_url": "https://docs.company.com/spring-boot",
-          "support_team": "Platform Team",
-          "license": "Apache 2.0",
+          "support_team": "DevOps Team",
+          "license": "Commercial",
           "learning_resources": [
             "Internal Spring Boot Training",
             "Official Spring Boot Documentation",
             "Company Spring Boot Best Practices"
           ]
+        },
+        {
+          "technology": "FastAPI",
+          "version": "0.103",
+          "purpose": "Modern API framework",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/fastapi",
+          "support_team": "Engineering Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal FastAPI Training",
+            "Official FastAPI Documentation",
+            "Company FastAPI Best Practices"
+          ]
         }
       ],
       "database": [
         {
+          "technology": "PostgreSQL",
+          "version": "15.x",
+          "purpose": "Relational database",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/postgresql",
+          "support_team": "Platform Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal PostgreSQL Training",
+            "Official PostgreSQL Documentation",
+            "Company PostgreSQL Best Practices"
+          ]
+        },
+        {
           "technology": "MySQL",
           "version": "8.x",
           "purpose": "Relational database",
-          "status": "deprecated",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/mysql",
-          "support_team": "Platform Team",
-          "license": "Apache 2.0",
+          "support_team": "Engineering Team",
+          "license": "Open Source",
           "learning_resources": [
             "Internal MySQL Training",
             "Official MySQL Documentation",
             "Company MySQL Best Practices"
-          ]
-        },
-        {
-          "technology": "Redis",
-          "version": "7.x",
-          "purpose": "In-memory data store",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/redis",
-          "support_team": "Engineering Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Redis Training",
-            "Official Redis Documentation",
-            "Company Redis Best Practices"
           ]
         }
       ],
       "ai_ml": [
         {
           "technology": "PyTorch",
-          "version": "2.1",
+          "version": "2.0",
           "purpose": "Deep learning framework",
-          "status": "deprecated",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/pytorch",
-          "support_team": "Platform Team",
-          "license": "Open Source",
+          "support_team": "Engineering Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal PyTorch Training",
             "Official PyTorch Documentation",
@@ -873,59 +1083,31 @@
           ]
         },
         {
-          "technology": "TensorFlow",
-          "version": "2.14",
-          "purpose": "ML framework",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/tensorflow",
-          "support_team": "Engineering Team",
-          "license": "Commercial",
+          "technology": "OpenAI API",
+          "version": "v1",
+          "purpose": "Language models",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/openai-api",
+          "support_team": "Platform Team",
+          "license": "MIT",
           "learning_resources": [
-            "Internal TensorFlow Training",
-            "Official TensorFlow Documentation",
-            "Company TensorFlow Best Practices"
+            "Internal OpenAI API Training",
+            "Official OpenAI API Documentation",
+            "Company OpenAI API Best Practices"
           ]
         },
         {
           "technology": "LangChain",
-          "version": "0.1",
+          "version": "0.0",
           "purpose": "LLM applications",
-          "status": "experimental",
+          "status": "active",
           "documentation_url": "https://docs.company.com/langchain",
-          "support_team": "DevOps Team",
-          "license": "MIT",
+          "support_team": "Platform Team",
+          "license": "Open Source",
           "learning_resources": [
             "Internal LangChain Training",
             "Official LangChain Documentation",
             "Company LangChain Best Practices"
-          ]
-        },
-        {
-          "technology": "Azure OpenAI",
-          "version": "2023-12-01",
-          "purpose": "AI services",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/azure-openai",
-          "support_team": "Engineering Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Azure OpenAI Training",
-            "Official Azure OpenAI Documentation",
-            "Company Azure OpenAI Best Practices"
-          ]
-        },
-        {
-          "technology": "Pandas",
-          "version": "2.x",
-          "purpose": "Data manipulation",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/pandas",
-          "support_team": "Engineering Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal Pandas Training",
-            "Official Pandas Documentation",
-            "Company Pandas Best Practices"
           ]
         }
       ],
@@ -934,10 +1116,10 @@
           "technology": "Azure",
           "version": "Latest",
           "purpose": "Cloud platform",
-          "status": "active",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/azure",
           "support_team": "DevOps Team",
-          "license": "MIT",
+          "license": "Commercial",
           "learning_resources": [
             "Internal Azure Training",
             "Official Azure Documentation",
@@ -946,12 +1128,12 @@
         },
         {
           "technology": "Terraform",
-          "version": "1.5",
+          "version": "1.6",
           "purpose": "Infrastructure as code",
-          "status": "deprecated",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/terraform",
-          "support_team": "Platform Team",
-          "license": "MIT",
+          "support_team": "DevOps Team",
+          "license": "Apache 2.0",
           "learning_resources": [
             "Internal Terraform Training",
             "Official Terraform Documentation",
@@ -962,60 +1144,18 @@
           "technology": "Google Cloud",
           "version": "Latest",
           "purpose": "Cloud platform",
-          "status": "active",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/google-cloud",
-          "support_team": "DevOps Team",
-          "license": "Commercial",
+          "support_team": "Platform Team",
+          "license": "Apache 2.0",
           "learning_resources": [
             "Internal Google Cloud Training",
             "Official Google Cloud Documentation",
             "Company Google Cloud Best Practices"
           ]
-        },
-        {
-          "technology": "AWS",
-          "version": "Latest",
-          "purpose": "Cloud platform",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/aws",
-          "support_team": "Engineering Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal AWS Training",
-            "Official AWS Documentation",
-            "Company AWS Best Practices"
-          ]
-        },
-        {
-          "technology": "Kubernetes",
-          "version": "1.28",
-          "purpose": "Container orchestration",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/kubernetes",
-          "support_team": "Engineering Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal Kubernetes Training",
-            "Official Kubernetes Documentation",
-            "Company Kubernetes Best Practices"
-          ]
         }
       ],
       "tools": [
-        {
-          "technology": "Confluence",
-          "version": "Latest",
-          "purpose": "Documentation",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/confluence",
-          "support_team": "Engineering Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Confluence Training",
-            "Official Confluence Documentation",
-            "Company Confluence Best Practices"
-          ]
-        },
         {
           "technology": "Jenkins",
           "version": "2.x",
@@ -1023,11 +1163,39 @@
           "status": "deprecated",
           "documentation_url": "https://docs.company.com/jenkins",
           "support_team": "DevOps Team",
-          "license": "Commercial",
+          "license": "Apache 2.0",
           "learning_resources": [
             "Internal Jenkins Training",
             "Official Jenkins Documentation",
             "Company Jenkins Best Practices"
+          ]
+        },
+        {
+          "technology": "Git",
+          "version": "2.x",
+          "purpose": "Version control",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/git",
+          "support_team": "Platform Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Git Training",
+            "Official Git Documentation",
+            "Company Git Best Practices"
+          ]
+        },
+        {
+          "technology": "VS Code",
+          "version": "Latest",
+          "purpose": "Code editor",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/vs-code",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal VS Code Training",
+            "Official VS Code Documentation",
+            "Company VS Code Best Practices"
           ]
         },
         {
@@ -1036,8 +1204,8 @@
           "purpose": "Code hosting",
           "status": "active",
           "documentation_url": "https://docs.company.com/github",
-          "support_team": "DevOps Team",
-          "license": "Commercial",
+          "support_team": "Platform Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal GitHub Training",
             "Official GitHub Documentation",
@@ -1047,24 +1215,24 @@
       ]
     },
     "architecture": {
-      "pattern": "Monolithic",
-      "deployment": "Hybrid Cloud",
-      "scalability": "Vertical"
+      "pattern": "Hybrid",
+      "deployment": "On-premise",
+      "scalability": "Auto-scaling"
     },
     "development_practices": {
-      "methodology": "DevOps",
+      "methodology": "Kanban",
       "version_control": "Git",
-      "ci_cd": "Jenkins",
+      "ci_cd": "GitLab CI",
       "testing": [
         "Unit Testing",
         "Integration Testing",
         "E2E Testing"
       ],
       "code_review": "Pull Request based review",
-      "documentation": "Notion"
+      "documentation": "Wiki"
     },
     "security": {
-      "authentication": "JWT",
+      "authentication": "OAuth 2.0",
       "authorization": "Role-based Access Control (RBAC)",
       "data_encryption": "AES-256",
       "security_scanning": [
@@ -1072,7 +1240,7 @@
         "DAST",
         "Dependency Scanning"
       ],
-      "compliance": "SOC 2"
+      "compliance": "HIPAA"
     }
   },
   {
@@ -1081,24 +1249,10 @@
     "tech_stack": {
       "frontend": [
         {
-          "technology": "TypeScript",
-          "version": "5.x",
-          "purpose": "Type-safe JavaScript",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/typescript",
-          "support_team": "DevOps Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal TypeScript Training",
-            "Official TypeScript Documentation",
-            "Company TypeScript Best Practices"
-          ]
-        },
-        {
           "technology": "Bootstrap",
           "version": "5.x",
           "purpose": "CSS framework",
-          "status": "experimental",
+          "status": "active",
           "documentation_url": "https://docs.company.com/bootstrap",
           "support_team": "DevOps Team",
           "license": "Commercial",
@@ -1109,42 +1263,112 @@
           ]
         },
         {
+          "technology": "Next.js",
+          "version": "12.x",
+          "purpose": "React framework",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/next.js",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Next.js Training",
+            "Official Next.js Documentation",
+            "Company Next.js Best Practices"
+          ]
+        },
+        {
+          "technology": "Angular",
+          "version": "16.x",
+          "purpose": "Application framework",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/angular",
+          "support_team": "Engineering Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Angular Training",
+            "Official Angular Documentation",
+            "Company Angular Best Practices"
+          ]
+        },
+        {
           "technology": "Tailwind CSS",
           "version": "3.x",
           "purpose": "Utility-first CSS",
-          "status": "experimental",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/tailwind-css",
-          "support_team": "Engineering Team",
+          "support_team": "Platform Team",
           "license": "MIT",
           "learning_resources": [
             "Internal Tailwind CSS Training",
             "Official Tailwind CSS Documentation",
             "Company Tailwind CSS Best Practices"
           ]
+        },
+        {
+          "technology": "TypeScript",
+          "version": "4.x",
+          "purpose": "Type-safe JavaScript",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/typescript",
+          "support_team": "DevOps Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal TypeScript Training",
+            "Official TypeScript Documentation",
+            "Company TypeScript Best Practices"
+          ]
+        },
+        {
+          "technology": "Vue.js",
+          "version": "2.x",
+          "purpose": "Progressive framework",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/vue.js",
+          "support_team": "DevOps Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Vue.js Training",
+            "Official Vue.js Documentation",
+            "Company Vue.js Best Practices"
+          ]
         }
       ],
       "backend": [
         {
-          "technology": "Python",
-          "version": "3.10",
-          "purpose": "Programming language",
+          "technology": "FastAPI",
+          "version": "0.103",
+          "purpose": "Modern API framework",
           "status": "experimental",
-          "documentation_url": "https://docs.company.com/python",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
+          "documentation_url": "https://docs.company.com/fastapi",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
           "learning_resources": [
-            "Internal Python Training",
-            "Official Python Documentation",
-            "Company Python Best Practices"
+            "Internal FastAPI Training",
+            "Official FastAPI Documentation",
+            "Company FastAPI Best Practices"
+          ]
+        },
+        {
+          "technology": ".NET Core",
+          "version": "7.x",
+          "purpose": "Cross-platform framework",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/.net-core",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal .NET Core Training",
+            "Official .NET Core Documentation",
+            "Company .NET Core Best Practices"
           ]
         },
         {
           "technology": "Django",
-          "version": "4.x",
+          "version": "3.x",
           "purpose": "Web framework",
-          "status": "active",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/django",
-          "support_team": "Engineering Team",
+          "support_team": "DevOps Team",
           "license": "MIT",
           "learning_resources": [
             "Internal Django Training",
@@ -1153,45 +1377,17 @@
           ]
         },
         {
-          "technology": "Go",
-          "version": "1.20",
-          "purpose": "Programming language",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/go",
-          "support_team": "Platform Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Go Training",
-            "Official Go Documentation",
-            "Company Go Best Practices"
-          ]
-        },
-        {
-          "technology": "Express.js",
-          "version": "4.x",
-          "purpose": "Node.js framework",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/express.js",
-          "support_team": "DevOps Team",
+          "technology": "Flask",
+          "version": "2.x",
+          "purpose": "Micro web framework",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/flask",
+          "support_team": "Engineering Team",
           "license": "Commercial",
           "learning_resources": [
-            "Internal Express.js Training",
-            "Official Express.js Documentation",
-            "Company Express.js Best Practices"
-          ]
-        },
-        {
-          "technology": "Spring Boot",
-          "version": "2.x",
-          "purpose": "Java framework",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/spring-boot",
-          "support_team": "DevOps Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Spring Boot Training",
-            "Official Spring Boot Documentation",
-            "Company Spring Boot Best Practices"
+            "Internal Flask Training",
+            "Official Flask Documentation",
+            "Company Flask Best Practices"
           ]
         }
       ],
@@ -1200,14 +1396,28 @@
           "technology": "Redis",
           "version": "7.x",
           "purpose": "In-memory data store",
-          "status": "deprecated",
+          "status": "active",
           "documentation_url": "https://docs.company.com/redis",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
+          "support_team": "Engineering Team",
+          "license": "Commercial",
           "learning_resources": [
             "Internal Redis Training",
             "Official Redis Documentation",
             "Company Redis Best Practices"
+          ]
+        },
+        {
+          "technology": "InfluxDB",
+          "version": "2.x",
+          "purpose": "Time series database",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/influxdb",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal InfluxDB Training",
+            "Official InfluxDB Documentation",
+            "Company InfluxDB Best Practices"
           ]
         },
         {
@@ -1216,7 +1426,7 @@
           "purpose": "Relational database",
           "status": "deprecated",
           "documentation_url": "https://docs.company.com/mysql",
-          "support_team": "DevOps Team",
+          "support_team": "Engineering Team",
           "license": "Commercial",
           "learning_resources": [
             "Internal MySQL Training",
@@ -1230,110 +1440,82 @@
           "purpose": "Relational database",
           "status": "experimental",
           "documentation_url": "https://docs.company.com/postgresql",
-          "support_team": "Engineering Team",
-          "license": "Commercial",
+          "support_team": "Platform Team",
+          "license": "Open Source",
           "learning_resources": [
             "Internal PostgreSQL Training",
             "Official PostgreSQL Documentation",
             "Company PostgreSQL Best Practices"
           ]
-        },
-        {
-          "technology": "Elasticsearch",
-          "version": "8.x",
-          "purpose": "Search engine",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/elasticsearch",
-          "support_team": "Engineering Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Elasticsearch Training",
-            "Official Elasticsearch Documentation",
-            "Company Elasticsearch Best Practices"
-          ]
-        },
-        {
-          "technology": "InfluxDB",
-          "version": "2.x",
-          "purpose": "Time series database",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/influxdb",
-          "support_team": "Platform Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal InfluxDB Training",
-            "Official InfluxDB Documentation",
-            "Company InfluxDB Best Practices"
-          ]
         }
       ],
       "ai_ml": [
-        {
-          "technology": "NumPy",
-          "version": "1.24",
-          "purpose": "Numerical computing",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/numpy",
-          "support_team": "Platform Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal NumPy Training",
-            "Official NumPy Documentation",
-            "Company NumPy Best Practices"
-          ]
-        },
         {
           "technology": "TensorFlow",
           "version": "2.14",
           "purpose": "ML framework",
           "status": "experimental",
           "documentation_url": "https://docs.company.com/tensorflow",
-          "support_team": "Platform Team",
-          "license": "Open Source",
+          "support_team": "Engineering Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal TensorFlow Training",
             "Official TensorFlow Documentation",
             "Company TensorFlow Best Practices"
           ]
+        },
+        {
+          "technology": "Azure OpenAI",
+          "version": "2023-12-01",
+          "purpose": "AI services",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/azure-openai",
+          "support_team": "DevOps Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Azure OpenAI Training",
+            "Official Azure OpenAI Documentation",
+            "Company Azure OpenAI Best Practices"
+          ]
+        },
+        {
+          "technology": "LangChain",
+          "version": "0.1",
+          "purpose": "LLM applications",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/langchain",
+          "support_team": "DevOps Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal LangChain Training",
+            "Official LangChain Documentation",
+            "Company LangChain Best Practices"
+          ]
+        },
+        {
+          "technology": "PyTorch",
+          "version": "2.1",
+          "purpose": "Deep learning framework",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/pytorch",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal PyTorch Training",
+            "Official PyTorch Documentation",
+            "Company PyTorch Best Practices"
+          ]
         }
       ],
       "cloud": [
         {
-          "technology": "AWS",
-          "version": "Latest",
-          "purpose": "Cloud platform",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/aws",
-          "support_team": "Platform Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal AWS Training",
-            "Official AWS Documentation",
-            "Company AWS Best Practices"
-          ]
-        },
-        {
-          "technology": "Google Cloud",
-          "version": "Latest",
-          "purpose": "Cloud platform",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/google-cloud",
-          "support_team": "Engineering Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Google Cloud Training",
-            "Official Google Cloud Documentation",
-            "Company Google Cloud Best Practices"
-          ]
-        },
-        {
           "technology": "Docker",
-          "version": "23.x",
+          "version": "24.x",
           "purpose": "Containerization",
           "status": "experimental",
           "documentation_url": "https://docs.company.com/docker",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
+          "support_team": "Platform Team",
+          "license": "Apache 2.0",
           "learning_resources": [
             "Internal Docker Training",
             "Official Docker Documentation",
@@ -1341,47 +1523,89 @@
           ]
         },
         {
-          "technology": "Terraform",
-          "version": "1.6",
-          "purpose": "Infrastructure as code",
+          "technology": "Azure",
+          "version": "Latest",
+          "purpose": "Cloud platform",
           "status": "experimental",
-          "documentation_url": "https://docs.company.com/terraform",
-          "support_team": "Platform Team",
+          "documentation_url": "https://docs.company.com/azure",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Azure Training",
+            "Official Azure Documentation",
+            "Company Azure Best Practices"
+          ]
+        },
+        {
+          "technology": "Kubernetes",
+          "version": "1.27",
+          "purpose": "Container orchestration",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/kubernetes",
+          "support_team": "DevOps Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Kubernetes Training",
+            "Official Kubernetes Documentation",
+            "Company Kubernetes Best Practices"
+          ]
+        },
+        {
+          "technology": "Google Cloud",
+          "version": "Latest",
+          "purpose": "Cloud platform",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/google-cloud",
+          "support_team": "Engineering Team",
           "license": "MIT",
           "learning_resources": [
-            "Internal Terraform Training",
-            "Official Terraform Documentation",
-            "Company Terraform Best Practices"
+            "Internal Google Cloud Training",
+            "Official Google Cloud Documentation",
+            "Company Google Cloud Best Practices"
           ]
         }
       ],
       "tools": [
         {
-          "technology": "Postman",
-          "version": "Latest",
-          "purpose": "API testing",
+          "technology": "Git",
+          "version": "2.x",
+          "purpose": "Version control",
           "status": "active",
-          "documentation_url": "https://docs.company.com/postman",
-          "support_team": "Engineering Team",
-          "license": "Open Source",
+          "documentation_url": "https://docs.company.com/git",
+          "support_team": "DevOps Team",
+          "license": "MIT",
           "learning_resources": [
-            "Internal Postman Training",
-            "Official Postman Documentation",
-            "Company Postman Best Practices"
+            "Internal Git Training",
+            "Official Git Documentation",
+            "Company Git Best Practices"
           ]
         },
         {
-          "technology": "VS Code",
+          "technology": "GitHub Actions",
           "version": "Latest",
-          "purpose": "Code editor",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/vs-code",
+          "purpose": "CI/CD",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/github-actions",
           "support_team": "Platform Team",
-          "license": "Apache 2.0",
+          "license": "Open Source",
           "learning_resources": [
-            "Internal VS Code Training",
-            "Official VS Code Documentation",
-            "Company VS Code Best Practices"
+            "Internal GitHub Actions Training",
+            "Official GitHub Actions Documentation",
+            "Company GitHub Actions Best Practices"
+          ]
+        },
+        {
+          "technology": "GitHub",
+          "version": "Latest",
+          "purpose": "Code hosting",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/github",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal GitHub Training",
+            "Official GitHub Documentation",
+            "Company GitHub Best Practices"
           ]
         },
         {
@@ -1390,26 +1614,12 @@
           "purpose": "Documentation",
           "status": "deprecated",
           "documentation_url": "https://docs.company.com/confluence",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
+          "support_team": "Engineering Team",
+          "license": "Commercial",
           "learning_resources": [
             "Internal Confluence Training",
             "Official Confluence Documentation",
             "Company Confluence Best Practices"
-          ]
-        },
-        {
-          "technology": "Git",
-          "version": "2.x",
-          "purpose": "Version control",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/git",
-          "support_team": "DevOps Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Git Training",
-            "Official Git Documentation",
-            "Company Git Best Practices"
           ]
         },
         {
@@ -1418,39 +1628,25 @@
           "purpose": "Communication",
           "status": "deprecated",
           "documentation_url": "https://docs.company.com/slack",
-          "support_team": "Platform Team",
-          "license": "Apache 2.0",
+          "support_team": "Engineering Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal Slack Training",
             "Official Slack Documentation",
             "Company Slack Best Practices"
           ]
-        },
-        {
-          "technology": "GitHub Actions",
-          "version": "Latest",
-          "purpose": "CI/CD",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/github-actions",
-          "support_team": "DevOps Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal GitHub Actions Training",
-            "Official GitHub Actions Documentation",
-            "Company GitHub Actions Best Practices"
-          ]
         }
       ]
     },
     "architecture": {
-      "pattern": "Microservices",
-      "deployment": "On-premise",
-      "scalability": "Horizontal"
+      "pattern": "Serverless",
+      "deployment": "Cloud-native",
+      "scalability": "Vertical"
     },
     "development_practices": {
-      "methodology": "Agile",
+      "methodology": "Kanban",
       "version_control": "Git",
-      "ci_cd": "Jenkins",
+      "ci_cd": "GitHub Actions",
       "testing": [
         "Unit Testing",
         "Integration Testing",
@@ -1460,7 +1656,7 @@
       "documentation": "Notion"
     },
     "security": {
-      "authentication": "JWT",
+      "authentication": "OAuth 2.0",
       "authorization": "Role-based Access Control (RBAC)",
       "data_encryption": "AES-256",
       "security_scanning": [
@@ -1477,27 +1673,27 @@
     "tech_stack": {
       "frontend": [
         {
-          "technology": "Streamlit",
-          "version": "1.28",
-          "purpose": "Python web apps",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/streamlit",
-          "support_team": "DevOps Team",
+          "technology": "TypeScript",
+          "version": "4.x",
+          "purpose": "Type-safe JavaScript",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/typescript",
+          "support_team": "Engineering Team",
           "license": "Commercial",
           "learning_resources": [
-            "Internal Streamlit Training",
-            "Official Streamlit Documentation",
-            "Company Streamlit Best Practices"
+            "Internal TypeScript Training",
+            "Official TypeScript Documentation",
+            "Company TypeScript Best Practices"
           ]
         },
         {
           "technology": "Bootstrap",
           "version": "5.x",
           "purpose": "CSS framework",
-          "status": "deprecated",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/bootstrap",
-          "support_team": "Platform Team",
-          "license": "MIT",
+          "support_team": "DevOps Team",
+          "license": "Open Source",
           "learning_resources": [
             "Internal Bootstrap Training",
             "Official Bootstrap Documentation",
@@ -1505,63 +1701,35 @@
           ]
         },
         {
-          "technology": "Vue.js",
-          "version": "2.x",
-          "purpose": "Progressive framework",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/vue.js",
-          "support_team": "Platform Team",
+          "technology": "Streamlit",
+          "version": "1.27",
+          "purpose": "Python web apps",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/streamlit",
+          "support_team": "DevOps Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Streamlit Training",
+            "Official Streamlit Documentation",
+            "Company Streamlit Best Practices"
+          ]
+        },
+        {
+          "technology": "Next.js",
+          "version": "13.x",
+          "purpose": "React framework",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/next.js",
+          "support_team": "DevOps Team",
           "license": "Apache 2.0",
           "learning_resources": [
-            "Internal Vue.js Training",
-            "Official Vue.js Documentation",
-            "Company Vue.js Best Practices"
+            "Internal Next.js Training",
+            "Official Next.js Documentation",
+            "Company Next.js Best Practices"
           ]
         }
       ],
       "backend": [
-        {
-          "technology": "Node.js",
-          "version": "18.x",
-          "purpose": "JavaScript runtime",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/node.js",
-          "support_team": "Platform Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal Node.js Training",
-            "Official Node.js Documentation",
-            "Company Node.js Best Practices"
-          ]
-        },
-        {
-          "technology": "Django",
-          "version": "3.x",
-          "purpose": "Web framework",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/django",
-          "support_team": "Engineering Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Django Training",
-            "Official Django Documentation",
-            "Company Django Best Practices"
-          ]
-        },
-        {
-          "technology": "Spring Boot",
-          "version": "3.x",
-          "purpose": "Java framework",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/spring-boot",
-          "support_team": "DevOps Team",
-          "license": "Apache 2.0",
-          "learning_resources": [
-            "Internal Spring Boot Training",
-            "Official Spring Boot Documentation",
-            "Company Spring Boot Best Practices"
-          ]
-        },
         {
           "technology": "Flask",
           "version": "2.x",
@@ -1569,7 +1737,7 @@
           "status": "experimental",
           "documentation_url": "https://docs.company.com/flask",
           "support_team": "Engineering Team",
-          "license": "Open Source",
+          "license": "Commercial",
           "learning_resources": [
             "Internal Flask Training",
             "Official Flask Documentation",
@@ -1577,33 +1745,89 @@
           ]
         },
         {
-          "technology": ".NET Core",
-          "version": "7.x",
-          "purpose": "Cross-platform framework",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/.net-core",
-          "support_team": "Engineering Team",
-          "license": "Open Source",
+          "technology": "Python",
+          "version": "3.9",
+          "purpose": "Programming language",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/python",
+          "support_team": "DevOps Team",
+          "license": "Commercial",
           "learning_resources": [
-            "Internal .NET Core Training",
-            "Official .NET Core Documentation",
-            "Company .NET Core Best Practices"
+            "Internal Python Training",
+            "Official Python Documentation",
+            "Company Python Best Practices"
+          ]
+        },
+        {
+          "technology": "Django",
+          "version": "3.x",
+          "purpose": "Web framework",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/django",
+          "support_team": "Platform Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Django Training",
+            "Official Django Documentation",
+            "Company Django Best Practices"
+          ]
+        },
+        {
+          "technology": "Express.js",
+          "version": "4.x",
+          "purpose": "Node.js framework",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/express.js",
+          "support_team": "Platform Team",
+          "license": "MIT",
+          "learning_resources": [
+            "Internal Express.js Training",
+            "Official Express.js Documentation",
+            "Company Express.js Best Practices"
+          ]
+        },
+        {
+          "technology": "Go",
+          "version": "1.21",
+          "purpose": "Programming language",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/go",
+          "support_team": "Platform Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Go Training",
+            "Official Go Documentation",
+            "Company Go Best Practices"
           ]
         }
       ],
       "database": [
         {
-          "technology": "Redis",
-          "version": "7.x",
-          "purpose": "In-memory data store",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/redis",
+          "technology": "MySQL",
+          "version": "8.x",
+          "purpose": "Relational database",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/mysql",
           "support_team": "Platform Team",
-          "license": "Commercial",
+          "license": "MIT",
           "learning_resources": [
-            "Internal Redis Training",
-            "Official Redis Documentation",
-            "Company Redis Best Practices"
+            "Internal MySQL Training",
+            "Official MySQL Documentation",
+            "Company MySQL Best Practices"
+          ]
+        },
+        {
+          "technology": "PostgreSQL",
+          "version": "15.x",
+          "purpose": "Relational database",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/postgresql",
+          "support_team": "Platform Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal PostgreSQL Training",
+            "Official PostgreSQL Documentation",
+            "Company PostgreSQL Best Practices"
           ]
         },
         {
@@ -1612,8 +1836,8 @@
           "purpose": "Search engine",
           "status": "experimental",
           "documentation_url": "https://docs.company.com/elasticsearch",
-          "support_team": "DevOps Team",
-          "license": "Apache 2.0",
+          "support_team": "Engineering Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal Elasticsearch Training",
             "Official Elasticsearch Documentation",
@@ -1621,13 +1845,27 @@
           ]
         },
         {
+          "technology": "Redis",
+          "version": "7.x",
+          "purpose": "In-memory data store",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/redis",
+          "support_team": "Platform Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Redis Training",
+            "Official Redis Documentation",
+            "Company Redis Best Practices"
+          ]
+        },
+        {
           "technology": "InfluxDB",
           "version": "2.x",
           "purpose": "Time series database",
-          "status": "active",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/influxdb",
-          "support_team": "DevOps Team",
-          "license": "Apache 2.0",
+          "support_team": "Engineering Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal InfluxDB Training",
             "Official InfluxDB Documentation",
@@ -1637,12 +1875,40 @@
       ],
       "ai_ml": [
         {
+          "technology": "Hugging Face",
+          "version": "4.x",
+          "purpose": "NLP models",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/hugging-face",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal Hugging Face Training",
+            "Official Hugging Face Documentation",
+            "Company Hugging Face Best Practices"
+          ]
+        },
+        {
+          "technology": "LangChain",
+          "version": "0.0",
+          "purpose": "LLM applications",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/langchain",
+          "support_team": "DevOps Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal LangChain Training",
+            "Official LangChain Documentation",
+            "Company LangChain Best Practices"
+          ]
+        },
+        {
           "technology": "OpenAI API",
           "version": "v1",
           "purpose": "Language models",
-          "status": "active",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/openai-api",
-          "support_team": "Platform Team",
+          "support_team": "DevOps Team",
           "license": "Commercial",
           "learning_resources": [
             "Internal OpenAI API Training",
@@ -1651,69 +1917,13 @@
           ]
         },
         {
-          "technology": "Hugging Face",
-          "version": "4.x",
-          "purpose": "NLP models",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/hugging-face",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Hugging Face Training",
-            "Official Hugging Face Documentation",
-            "Company Hugging Face Best Practices"
-          ]
-        },
-        {
-          "technology": "Pandas",
-          "version": "2.x",
-          "purpose": "Data manipulation",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/pandas",
-          "support_team": "DevOps Team",
-          "license": "Commercial",
-          "learning_resources": [
-            "Internal Pandas Training",
-            "Official Pandas Documentation",
-            "Company Pandas Best Practices"
-          ]
-        },
-        {
-          "technology": "TensorFlow",
-          "version": "2.14",
-          "purpose": "ML framework",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/tensorflow",
-          "support_team": "DevOps Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal TensorFlow Training",
-            "Official TensorFlow Documentation",
-            "Company TensorFlow Best Practices"
-          ]
-        },
-        {
-          "technology": "NumPy",
-          "version": "1.24",
-          "purpose": "Numerical computing",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/numpy",
-          "support_team": "Engineering Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal NumPy Training",
-            "Official NumPy Documentation",
-            "Company NumPy Best Practices"
-          ]
-        },
-        {
           "technology": "Scikit-learn",
           "version": "1.3",
           "purpose": "ML library",
-          "status": "experimental",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/scikit-learn",
           "support_team": "Platform Team",
-          "license": "Commercial",
+          "license": "MIT",
           "learning_resources": [
             "Internal Scikit-learn Training",
             "Official Scikit-learn Documentation",
@@ -1723,112 +1933,126 @@
       ],
       "cloud": [
         {
+          "technology": "Google Cloud",
+          "version": "Latest",
+          "purpose": "Cloud platform",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/google-cloud",
+          "support_team": "Platform Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal Google Cloud Training",
+            "Official Google Cloud Documentation",
+            "Company Google Cloud Best Practices"
+          ]
+        },
+        {
+          "technology": "Terraform",
+          "version": "1.6",
+          "purpose": "Infrastructure as code",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/terraform",
+          "support_team": "Platform Team",
+          "license": "Commercial",
+          "learning_resources": [
+            "Internal Terraform Training",
+            "Official Terraform Documentation",
+            "Company Terraform Best Practices"
+          ]
+        },
+        {
           "technology": "Azure",
           "version": "Latest",
           "purpose": "Cloud platform",
-          "status": "active",
+          "status": "experimental",
           "documentation_url": "https://docs.company.com/azure",
-          "support_team": "DevOps Team",
-          "license": "MIT",
+          "support_team": "Platform Team",
+          "license": "Apache 2.0",
           "learning_resources": [
             "Internal Azure Training",
             "Official Azure Documentation",
             "Company Azure Best Practices"
           ]
-        },
-        {
-          "technology": "Kubernetes",
-          "version": "1.28",
-          "purpose": "Container orchestration",
-          "status": "active",
-          "documentation_url": "https://docs.company.com/kubernetes",
-          "support_team": "Platform Team",
-          "license": "Open Source",
-          "learning_resources": [
-            "Internal Kubernetes Training",
-            "Official Kubernetes Documentation",
-            "Company Kubernetes Best Practices"
-          ]
         }
       ],
       "tools": [
         {
-          "technology": "Git",
-          "version": "2.x",
-          "purpose": "Version control",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/git",
-          "support_team": "DevOps Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal Git Training",
-            "Official Git Documentation",
-            "Company Git Best Practices"
-          ]
-        },
-        {
-          "technology": "Postman",
+          "technology": "Jira",
           "version": "Latest",
-          "purpose": "API testing",
-          "status": "deprecated",
-          "documentation_url": "https://docs.company.com/postman",
-          "support_team": "DevOps Team",
+          "purpose": "Project management",
+          "status": "experimental",
+          "documentation_url": "https://docs.company.com/jira",
+          "support_team": "Engineering Team",
           "license": "Commercial",
           "learning_resources": [
-            "Internal Postman Training",
-            "Official Postman Documentation",
-            "Company Postman Best Practices"
-          ]
-        },
-        {
-          "technology": "VS Code",
-          "version": "Latest",
-          "purpose": "Code editor",
-          "status": "experimental",
-          "documentation_url": "https://docs.company.com/vs-code",
-          "support_team": "DevOps Team",
-          "license": "MIT",
-          "learning_resources": [
-            "Internal VS Code Training",
-            "Official VS Code Documentation",
-            "Company VS Code Best Practices"
+            "Internal Jira Training",
+            "Official Jira Documentation",
+            "Company Jira Best Practices"
           ]
         },
         {
           "technology": "GitHub Actions",
           "version": "Latest",
           "purpose": "CI/CD",
-          "status": "experimental",
+          "status": "deprecated",
           "documentation_url": "https://docs.company.com/github-actions",
-          "support_team": "DevOps Team",
-          "license": "Open Source",
+          "support_team": "Engineering Team",
+          "license": "MIT",
           "learning_resources": [
             "Internal GitHub Actions Training",
             "Official GitHub Actions Documentation",
             "Company GitHub Actions Best Practices"
           ]
+        },
+        {
+          "technology": "GitHub",
+          "version": "Latest",
+          "purpose": "Code hosting",
+          "status": "deprecated",
+          "documentation_url": "https://docs.company.com/github",
+          "support_team": "Engineering Team",
+          "license": "Apache 2.0",
+          "learning_resources": [
+            "Internal GitHub Training",
+            "Official GitHub Documentation",
+            "Company GitHub Best Practices"
+          ]
+        },
+        {
+          "technology": "VS Code",
+          "version": "Latest",
+          "purpose": "Code editor",
+          "status": "active",
+          "documentation_url": "https://docs.company.com/vs-code",
+          "support_team": "DevOps Team",
+          "license": "Open Source",
+          "learning_resources": [
+            "Internal VS Code Training",
+            "Official VS Code Documentation",
+            "Company VS Code Best Practices"
+          ]
         }
       ]
     },
     "architecture": {
-      "pattern": "Microservices",
-      "deployment": "On-premise",
+      "pattern": "Hybrid",
+      "deployment": "Hybrid Cloud",
       "scalability": "Horizontal"
     },
     "development_practices": {
-      "methodology": "Kanban",
+      "methodology": "DevOps",
       "version_control": "Git",
-      "ci_cd": "Jenkins",
+      "ci_cd": "GitLab CI",
       "testing": [
         "Unit Testing",
         "Integration Testing",
         "E2E Testing"
       ],
       "code_review": "Pull Request based review",
-      "documentation": "Wiki"
+      "documentation": "GitBook"
     },
     "security": {
-      "authentication": "JWT",
+      "authentication": "Multi-factor",
       "authorization": "Role-based Access Control (RBAC)",
       "data_encryption": "AES-256",
       "security_scanning": [

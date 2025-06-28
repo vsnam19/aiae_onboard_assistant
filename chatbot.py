@@ -73,6 +73,74 @@ def get_techstack_information() -> str:
         logger.error(error_msg)
         return error_msg
 
+def get_user_project_assignment(user_name: str, user_department: str = None) -> str:
+    """Find the current user's specific project assignment(s)."""
+    try:
+        with open(Config.MEMBER_INFO_PATH, 'r', encoding='utf-8') as file:
+            member_info = json.load(file)
+        
+        user_projects = []
+        
+        # Search through all projects for the user
+        for project in member_info:
+            for member in project.get('members', []):
+                # Match by name (flexible matching)
+                member_name = member.get('name', '').lower()
+                search_name = user_name.lower()
+                
+                # Check if it's a match (first name, full name, or partial match)
+                if (search_name in member_name or 
+                    member_name.startswith(search_name) or
+                    any(search_name in name_part for name_part in member_name.split())):
+                    
+                    # Additional department check if provided
+                    if user_department and member.get('department'):
+                        if user_department.lower() not in member.get('department', '').lower():
+                            continue
+                    
+                    user_projects.append({
+                        'project_code': project.get('project_code'),
+                        'project_name': project.get('project_name'),
+                        'department': project.get('department'),
+                        'status': project.get('status'),
+                        'description': project.get('description'),
+                        'member_info': {
+                            'employee_id': member.get('employee_id'),
+                            'name': member.get('name'),
+                            'role': member.get('role'),
+                            'email': member.get('email'),
+                            'team': member.get('team'),
+                            'manager': member.get('manager'),
+                            'hire_date': member.get('hire_date'),
+                            'status': member.get('status')
+                        }
+                    })
+        
+        if user_projects:
+            result = {
+                'user_found': True,
+                'total_projects': len(user_projects),
+                'projects': user_projects
+            }
+        else:
+            result = {
+                'user_found': False,
+                'message': f"No project assignment found for user: {user_name}" + 
+                          (f" in department: {user_department}" if user_department else ""),
+                'suggestion': "Please check with HR or your manager for project assignment details."
+            }
+        
+        logger.info(f"User project lookup for '{user_name}': {len(user_projects)} projects found")
+        return json.dumps(result, indent=2, ensure_ascii=False)
+        
+    except Exception as e:
+        error_msg = f"Error looking up user project assignment: {str(e)}"
+        logger.error(error_msg)
+        return json.dumps({
+            'user_found': False,
+            'error': error_msg
+        }, indent=2)
+
 class AzureOpenAIClient:
     _instance: Optional[AzureOpenAI] = None
 
@@ -88,7 +156,7 @@ class AzureOpenAIClient:
 
             try:
                 AzureOpenAIClient._instance = AzureOpenAI(
-                    azure_endpoint=Config.OPENAI_ENDPOINT,
+                    azure_endpoint= Config.OPENAI_ENDPOINT,
                     api_key=Config.OPENAI_API_KEY,
                     api_version=Config.OPENAI_API_VERSION
                 )
@@ -145,51 +213,71 @@ class OnboardingAssistant:
         self.system_prompt = Prompt.SYSTEM_PROMPT
         self.conversation_history: List[Dict[str, Any]] = []
         self.chat_history_file = Config.CHAT_HISTORY_PATH
+
         # Enhanced function definitions with better descriptions
         self.function_definitions = [
-            {
-                "type": "function",
-                "function": {
-                    "name": "get_member_information",
-                    "description": "Retrieve comprehensive team member information including names, roles, emails, contact details, and project assignments. Use this when users ask about team members, who works on what, contact information, or organizational structure.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {},
-                        "required": []
-                    }
-                }
-            },
-            {
-                "type": "function",
-                "function": {
-                    "name": "get_process_information",
-                    "description": "Retrieve detailed information about company processes, workflows, procedures, guidelines, policies, and standard operating procedures. Use this when users ask about how things work, company policies, or procedural questions.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {},
-                        "required": []
-                    }
-                }
-            },
-            {
-                "type": "function",
-                "function": {
-                    "name": "get_techstack_information",
-                    "description": "Retrieve comprehensive information about the technology stack, development tools, frameworks, programming languages, software, and technical resources used in projects. Use this when users ask about technical tools, development environment, or technology-related questions.",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {},
-                        "required": []
-                    }
+        {
+            "type": "function",
+            "function": {
+                "name": "get_member_information",
+                "description": """Get team member information organized by projects.
+                
+                Data structure: projects[] -> members[] with fields like name, role, email, department, team, manager, hire_date, skills, status, phone, location
+                
+                Use for: team questions, contact info, roles, project assignments, "who works on X", "what's John's role", "team structure" """,
+                "parameters": {"type": "object", "properties": {}, "required": []}
+            }
+        },
+        {
+            "type": "function", 
+            "function": {
+                "name": "get_process_information",
+                "description": """Get company processes and workflows organized by projects.
+                
+                Data structure: projects[] -> processes[] with fields like process_name, description, status, dates, responsible_members, deliverables, dependencies, progress_percentage
+
+                Use for: workflow questions, process status, timelines, responsibilities, "how do we do X", "what's the status of Y", "who handles Z" """,
+                "parameters": {"type": "object", "properties": {}, "required": []}
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "get_techstack_information", 
+                "description": """Get technology stack information organized by projects.
+                
+                Data structure: projects[] -> tech_stack{frontend, backend, database, ai_ml, cloud, tools} with fields like technology, version, purpose, status, documentation_url, support_team, learning_resources
+                
+                Use for: technology questions, tool info, versions, documentation, "what tech do we use", "which database", "where to learn React" """,
+                "parameters": {"type": "object", "properties": {}, "required": []}
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "get_user_project_assignment",
+                "description": """Get the current user's project assignment(s) based on their name and optional department.
+                
+                Data structure: user_found (boolean), total_projects (int), projects[] with fields like project_code, project_name, department, status, description, member_info (employee_id, name, role, email, team, manager, hire_date, status)
+                
+                Use for: finding user's project assignments, checking current projects, "what project am I assigned to", "which team am I in" """,
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "user_name": {"type": "string", "description": "The name of the user to look up"},
+                        "user_department": {"type": "string", "description": "Optional department filter"}
+                    },
+                    "required": ["user_name"]
                 }
             }
+        }
         ]
-        
         # Function mapping for cleaner execution
         self.function_map = {
             "get_member_information": get_member_information,
             "get_process_information": get_process_information,
-            "get_techstack_information": get_techstack_information
+            "get_techstack_information": get_techstack_information,
+            "get_user_project_assignment": get_user_project_assignment
         }
         
         self.reset_conversation()
@@ -212,6 +300,19 @@ class OnboardingAssistant:
             logger.info("Conversation history cleared successfully")
         except Exception as e:
             logger.error(f"Error clearing conversation history: {str(e)}")
+
+    def set_additional_context(self, context: str):
+        """Set additional context for the conversation."""
+        if not context:
+            logger.warning("No context provided to set")
+            return
+        
+        # Add context as a user message
+        self.conversation_history.append({
+            "role": "user",
+            "content": context
+        })
+        logger.info(f"Additional context set: {context[:100]}...")
 
     def reset_conversation(self):
         """Reset conversation history to initial state."""

@@ -27,8 +27,8 @@ class MockDataGenerator:
         
         # Sample data pools for realistic generation
         self.departments = [
-            "Engineering", "Product", "Design", "Marketing", "Sales", 
-            "HR", "Finance", "Operations", "Data Science", "DevOps"
+            "Engineering", "Product", "Design",
+            "Finance", "Data Science", "DevOps"
         ]
         
         self.roles = {
@@ -371,67 +371,6 @@ class MockDataGenerator:
             projects.append(project)
         
         return projects
-
-    def generate_chat_history(self, num_conversations: int = 20) -> List[Dict[str, Any]]:
-        """Generate realistic chat history examples."""
-        conversations = []
-        
-        sample_conversations = [
-            {
-                "user": "Who is my team lead?",
-                "assistant": "Based on your project assignment, your team lead is Alex Johnson. Alex is a Senior Software Engineer with 5 years of experience and can be reached at alex.johnson@company.com."
-            },
-            {
-                "user": "What's our code review process?",
-                "assistant": "Our code review process follows these steps: 1) Create a pull request with detailed description, 2) Assign at least 2 reviewers, 3) Address all feedback, 4) Get approval from senior developer, 5) Merge to main branch. All code must pass automated tests before review."
-            },
-            {
-                "user": "What technologies do we use for frontend development?",
-                "assistant": "For frontend development, we primarily use React 18.x with TypeScript for type safety. We also use Tailwind CSS for styling, Next.js for full-stack React applications, and Streamlit for internal Python-based web applications."
-            },
-            {
-                "user": "How do I request time off?",
-                "assistant": "To request time off: 1) Submit request through the HR portal at least 2 weeks in advance, 2) Get approval from your direct manager, 3) Update your calendar and set up out-of-office messages, 4) Brief your team on any handover requirements."
-            },
-            {
-                "user": "What's our deployment process?",
-                "assistant": "Our deployment process uses CI/CD with GitHub Actions: 1) Code is pushed to feature branch, 2) Automated tests run, 3) Pull request review and approval, 4) Merge triggers staging deployment, 5) Manual approval for production deployment, 6) Monitoring and rollback procedures in place."
-            }
-        ]
-        
-        for i in range(num_conversations):
-            # Use sample conversations or generate variations
-            if i < len(sample_conversations):
-                base_conversation = sample_conversations[i]
-            else:
-                base_conversation = random.choice(sample_conversations)
-            
-            conversation = {
-                "conversation_id": f"CONV{i+1:04d}",
-                "user_id": f"EMP{random.randint(1, 40):04d}",
-                "timestamp": (datetime.now() - timedelta(days=random.randint(1, 30))).isoformat(),
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": base_conversation["user"],
-                        "timestamp": (datetime.now() - timedelta(days=random.randint(1, 30))).isoformat()
-                    },
-                    {
-                        "role": "assistant", 
-                        "content": base_conversation["assistant"],
-                        "timestamp": (datetime.now() - timedelta(days=random.randint(1, 30))).isoformat(),
-                        "tools_used": random.choice([[], ["get_member_information"], ["get_process_information"], ["get_techstack_information"]])
-                    }
-                ],
-                "satisfaction_rating": random.randint(3, 5),
-                "resolved": random.choice([True, True, True, False]),
-                "topic_tags": random.sample(["onboarding", "team", "process", "technology", "hr", "deployment"], random.randint(1, 3))
-            }
-            
-            conversations.append(conversation)
-        
-        return conversations
-
     def save_to_file(self, data: Any, filename: str) -> None:
         """Save data to JSON file with proper formatting."""
         filepath = self.data_dir / filename
@@ -460,11 +399,6 @@ class MockDataGenerator:
             techstack_data = self.generate_techstack_info(num_projects=5)
             self.save_to_file(techstack_data, "techstack.json")
             
-            # Generate chat history
-            print("💬 Generating chat history...")
-            chat_data = self.generate_chat_history(num_conversations=25)
-            self.save_to_file(chat_data, "chat_history.json")
-            
             print("=" * 50)
             print("✅ Mock data generation completed successfully!")
             print(f"📁 All files saved to: {self.data_dir.absolute()}")
@@ -476,7 +410,6 @@ class MockDataGenerator:
             print(f"   • {len(process_data)} projects with process information")
             print(f"   • {sum(len(p['processes']) for p in process_data)} total processes")
             print(f"   • {len(techstack_data)} projects with tech stack information")
-            print(f"   • {len(chat_data)} conversation examples")
             
         except Exception as e:
             print(f"❌ Error generating mock data: {str(e)}")

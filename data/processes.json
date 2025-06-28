@@ -7,18 +7,18 @@
         "process_id": "PROC001-01",
         "process_name": "Requirements Gathering",
         "description": "Collect and document detailed project requirements from stakeholders",
-        "category": "Testing Process",
+        "category": "Performance Review",
         "status": "completed",
-        "priority": "medium",
-        "start_date": "2025-01-27",
-        "end_date": "2025-02-10",
-        "estimated_hours": 112,
+        "priority": "low",
+        "start_date": "2025-05-10",
+        "end_date": "2025-05-24",
+        "estimated_hours": 98,
         "responsible_members": [
-          "EMP0010@company.com",
-          "EMP0024@company.com"
+          "EMP0026@company.com"
         ],
         "stakeholders": [
-          "EMP0009@company.com"
+          "EMP0003@company.com",
+          "EMP0004@company.com"
         ],
         "deliverables": [
           "Requirements Document",
@@ -30,7 +30,8 @@
           "PROC001-02"
         ],
         "risks": [
-          "Resource availability constraints"
+          "Resource availability constraints",
+          "Technical complexity challenges"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -43,18 +44,17 @@
         "process_id": "PROC001-02",
         "process_name": "Design & Architecture",
         "description": "Create system design and technical architecture documentation",
-        "category": "Code Review Process",
+        "category": "Development Workflow",
         "status": "completed",
-        "priority": "medium",
-        "start_date": "2025-02-10",
-        "end_date": "2025-03-03",
+        "priority": "low",
+        "start_date": "2025-05-24",
+        "end_date": "2025-06-14",
         "estimated_hours": 126,
         "responsible_members": [
-          "EMP0015@company.com"
+          "EMP0001@company.com"
         ],
         "stakeholders": [
-          "EMP0016@company.com",
-          "EMP0035@company.com"
+          "EMP0004@company.com"
         ],
         "deliverables": [
           "System Architecture",
@@ -70,8 +70,7 @@
         ],
         "risks": [
           "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Technical complexity challenges"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -84,20 +83,19 @@
         "process_id": "PROC001-03",
         "process_name": "Development Sprint Planning",
         "description": "Plan development sprints and allocate resources",
-        "category": "Quality Assurance",
+        "category": "Deployment Process",
         "status": "completed",
-        "priority": "medium",
-        "start_date": "2025-03-03",
-        "end_date": "2025-03-06",
-        "estimated_hours": 21,
+        "priority": "high",
+        "start_date": "2025-06-14",
+        "end_date": "2025-06-17",
+        "estimated_hours": 30,
         "responsible_members": [
-          "EMP0017@company.com",
-          "EMP0014@company.com",
-          "EMP0027@company.com"
+          "EMP0021@company.com",
+          "EMP0006@company.com"
         ],
         "stakeholders": [
-          "EMP0015@company.com",
-          "EMP0030@company.com"
+          "EMP0027@company.com",
+          "EMP0016@company.com"
         ],
         "deliverables": [
           "Sprint Backlog",
@@ -111,9 +109,7 @@
           "PROC001-04"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -126,20 +122,19 @@
         "process_id": "PROC001-04",
         "process_name": "Core Development",
         "description": "Implement core functionality according to specifications",
-        "category": "Security Process",
-        "status": "completed",
-        "priority": "high",
-        "start_date": "2025-03-06",
-        "end_date": "2025-04-20",
+        "category": "Testing Process",
+        "status": "in-progress",
+        "priority": "medium",
+        "start_date": "2025-06-17",
+        "end_date": "2025-08-01",
         "estimated_hours": 360,
         "responsible_members": [
-          "EMP0034@company.com",
-          "EMP0008@company.com",
-          "EMP0024@company.com"
+          "EMP0009@company.com",
+          "EMP0009@company.com"
         ],
         "stakeholders": [
-          "EMP0026@company.com",
-          "EMP0029@company.com"
+          "EMP0012@company.com",
+          "EMP0004@company.com"
         ],
         "deliverables": [
           "Source Code",
@@ -162,23 +157,26 @@
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 100
+        "progress_percentage": 40
       },
       {
         "process_id": "PROC001-05",
         "process_name": "Quality Assurance",
         "description": "Comprehensive testing of all system components",
-        "category": "Testing Process",
-        "status": "completed",
-        "priority": "medium",
-        "start_date": "2025-04-20",
-        "end_date": "2025-05-04",
-        "estimated_hours": 112,
+        "category": "Onboarding Process",
+        "status": "planned",
+        "priority": "low",
+        "start_date": "2025-08-01",
+        "end_date": "2025-08-15",
+        "estimated_hours": 84,
         "responsible_members": [
-          "EMP0025@company.com"
+          "EMP0030@company.com",
+          "EMP0011@company.com",
+          "EMP0039@company.com"
         ],
         "stakeholders": [
-          "EMP0033@company.com"
+          "EMP0022@company.com",
+          "EMP0007@company.com"
         ],
         "deliverables": [
           "Test Cases",
@@ -193,32 +191,32 @@
           "PROC001-06"
         ],
         "risks": [
-          "Resource availability constraints"
+          "Resource availability constraints",
+          "Technical complexity challenges"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 100
+        "progress_percentage": 0
       },
       {
         "process_id": "PROC001-06",
         "process_name": "User Acceptance Testing",
         "description": "Stakeholder testing and validation of requirements",
-        "category": "Incident Response",
-        "status": "completed",
+        "category": "Meeting Process",
+        "status": "planned",
         "priority": "high",
-        "start_date": "2025-05-04",
-        "end_date": "2025-05-14",
-        "estimated_hours": 80,
+        "start_date": "2025-08-15",
+        "end_date": "2025-08-25",
+        "estimated_hours": 90,
         "responsible_members": [
-          "EMP0032@company.com",
-          "EMP0039@company.com"
+          "EMP0036@company.com"
         ],
         "stakeholders": [
-          "EMP0002@company.com",
-          "EMP0022@company.com"
+          "EMP0021@company.com",
+          "EMP0004@company.com"
         ],
         "deliverables": [
           "UAT Results",
@@ -232,34 +230,32 @@
           "PROC001-07"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 100
+        "progress_percentage": 0
       },
       {
         "process_id": "PROC001-07",
         "process_name": "Deployment",
         "description": "Deploy system to production environment",
-        "category": "Performance Review",
-        "status": "completed",
+        "category": "Deployment Process",
+        "status": "planned",
         "priority": "medium",
-        "start_date": "2025-05-14",
-        "end_date": "2025-05-19",
-        "estimated_hours": 50,
+        "start_date": "2025-08-25",
+        "end_date": "2025-08-30",
+        "estimated_hours": 30,
         "responsible_members": [
-          "EMP0035@company.com",
-          "EMP0030@company.com",
-          "EMP0015@company.com"
+          "EMP0028@company.com",
+          "EMP0003@company.com"
         ],
         "stakeholders": [
-          "EMP0003@company.com"
+          "EMP0005@company.com",
+          "EMP0011@company.com"
         ],
         "deliverables": [
           "Deployment Plan",
@@ -274,33 +270,31 @@
         ],
         "risks": [
           "Resource availability constraints",
-          "Technical complexity challenges"
+          "Technical complexity challenges",
+          "Timeline dependencies"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 100
+        "progress_percentage": 0
       },
       {
         "process_id": "PROC001-08",
         "process_name": "Post-Launch Support",
         "description": "Monitor system performance and provide support",
-        "category": "Change Management",
-        "status": "completed",
-        "priority": "high",
-        "start_date": "2025-05-19",
-        "end_date": "2025-06-18",
+        "category": "Code Review Process",
+        "status": "planned",
+        "priority": "medium",
+        "start_date": "2025-08-30",
+        "end_date": "2025-09-29",
         "estimated_hours": 270,
         "responsible_members": [
-          "EMP0011@company.com",
-          "EMP0007@company.com",
-          "EMP0040@company.com"
+          "EMP0029@company.com"
         ],
         "stakeholders": [
-          "EMP0039@company.com",
-          "EMP0020@company.com"
+          "EMP0019@company.com"
         ],
         "deliverables": [
           "Performance Reports",
@@ -320,7 +314,7 @@
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 100
+        "progress_percentage": 0
       }
     ]
   },
@@ -332,18 +326,19 @@
         "process_id": "PROC002-01",
         "process_name": "Requirements Gathering",
         "description": "Collect and document detailed project requirements from stakeholders",
-        "category": "Security Process",
+        "category": "Quality Assurance",
         "status": "completed",
-        "priority": "low",
-        "start_date": "2025-03-14",
-        "end_date": "2025-03-28",
-        "estimated_hours": 140,
+        "priority": "medium",
+        "start_date": "2025-03-18",
+        "end_date": "2025-04-01",
+        "estimated_hours": 84,
         "responsible_members": [
-          "EMP0027@company.com",
-          "EMP0033@company.com"
+          "EMP0032@company.com",
+          "EMP0019@company.com"
         ],
         "stakeholders": [
-          "EMP0028@company.com"
+          "EMP0009@company.com",
+          "EMP0021@company.com"
         ],
         "deliverables": [
           "Requirements Document",
@@ -355,9 +350,7 @@
           "PROC002-02"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -370,20 +363,20 @@
         "process_id": "PROC002-02",
         "process_name": "Design & Architecture",
         "description": "Create system design and technical architecture documentation",
-        "category": "Deployment Process",
+        "category": "Development Workflow",
         "status": "completed",
-        "priority": "low",
-        "start_date": "2025-03-28",
-        "end_date": "2025-04-18",
-        "estimated_hours": 168,
+        "priority": "high",
+        "start_date": "2025-04-01",
+        "end_date": "2025-04-22",
+        "estimated_hours": 126,
         "responsible_members": [
-          "EMP0025@company.com",
-          "EMP0032@company.com",
-          "EMP0008@company.com"
+          "EMP0014@company.com",
+          "EMP0016@company.com",
+          "EMP0036@company.com"
         ],
         "stakeholders": [
-          "EMP0023@company.com",
-          "EMP0006@company.com"
+          "EMP0021@company.com",
+          "EMP0008@company.com"
         ],
         "deliverables": [
           "System Architecture",
@@ -411,17 +404,18 @@
         "process_id": "PROC002-03",
         "process_name": "Development Sprint Planning",
         "description": "Plan development sprints and allocate resources",
-        "category": "Testing Process",
+        "category": "Development Workflow",
         "status": "completed",
         "priority": "medium",
-        "start_date": "2025-04-18",
-        "end_date": "2025-04-21",
-        "estimated_hours": 27,
+        "start_date": "2025-04-22",
+        "end_date": "2025-04-25",
+        "estimated_hours": 18,
         "responsible_members": [
-          "EMP0005@company.com"
+          "EMP0010@company.com"
         ],
         "stakeholders": [
-          "EMP0015@company.com"
+          "EMP0037@company.com",
+          "EMP0026@company.com"
         ],
         "deliverables": [
           "Sprint Backlog",
@@ -435,9 +429,7 @@
           "PROC002-04"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -450,19 +442,19 @@
         "process_id": "PROC002-04",
         "process_name": "Core Development",
         "description": "Implement core functionality according to specifications",
-        "category": "Meeting Process",
+        "category": "Incident Response",
         "status": "completed",
         "priority": "medium",
-        "start_date": "2025-04-21",
-        "end_date": "2025-06-05",
-        "estimated_hours": 405,
+        "start_date": "2025-04-25",
+        "end_date": "2025-06-09",
+        "estimated_hours": 315,
         "responsible_members": [
-          "EMP0034@company.com",
-          "EMP0036@company.com",
-          "EMP0040@company.com"
+          "EMP0008@company.com",
+          "EMP0023@company.com",
+          "EMP0022@company.com"
         ],
         "stakeholders": [
-          "EMP0022@company.com"
+          "EMP0031@company.com"
         ],
         "deliverables": [
           "Source Code",
@@ -477,7 +469,8 @@
           "PROC002-05"
         ],
         "risks": [
-          "Resource availability constraints"
+          "Resource availability constraints",
+          "Technical complexity challenges"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -492,16 +485,17 @@
         "description": "Comprehensive testing of all system components",
         "category": "Onboarding Process",
         "status": "completed",
-        "priority": "medium",
-        "start_date": "2025-06-05",
-        "end_date": "2025-06-19",
-        "estimated_hours": 140,
+        "priority": "high",
+        "start_date": "2025-06-09",
+        "end_date": "2025-06-23",
+        "estimated_hours": 126,
         "responsible_members": [
-          "EMP0017@company.com",
-          "EMP0006@company.com"
+          "EMP0031@company.com",
+          "EMP0035@company.com"
         ],
         "stakeholders": [
-          "EMP0016@company.com"
+          "EMP0013@company.com",
+          "EMP0033@company.com"
         ],
         "deliverables": [
           "Test Cases",
@@ -529,20 +523,18 @@
         "process_id": "PROC002-06",
         "process_name": "User Acceptance Testing",
         "description": "Stakeholder testing and validation of requirements",
-        "category": "Onboarding Process",
+        "category": "Deployment Process",
         "status": "in-progress",
-        "priority": "medium",
-        "start_date": "2025-06-19",
-        "end_date": "2025-06-29",
+        "priority": "high",
+        "start_date": "2025-06-23",
+        "end_date": "2025-07-03",
         "estimated_hours": 100,
         "responsible_members": [
-          "EMP0027@company.com",
-          "EMP0024@company.com",
-          "EMP0007@company.com"
+          "EMP0028@company.com",
+          "EMP0039@company.com"
         ],
         "stakeholders": [
-          "EMP0027@company.com",
-          "EMP0030@company.com"
+          "EMP0040@company.com"
         ],
         "deliverables": [
           "UAT Results",
@@ -565,24 +557,24 @@
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 66
+        "progress_percentage": 96
       },
       {
         "process_id": "PROC002-07",
         "process_name": "Deployment",
         "description": "Deploy system to production environment",
-        "category": "Development Workflow",
+        "category": "Change Management",
         "status": "planned",
-        "priority": "low",
-        "start_date": "2025-06-29",
-        "end_date": "2025-07-04",
+        "priority": "high",
+        "start_date": "2025-07-03",
+        "end_date": "2025-07-08",
         "estimated_hours": 45,
         "responsible_members": [
-          "EMP0028@company.com",
-          "EMP0007@company.com"
+          "EMP0040@company.com",
+          "EMP0019@company.com"
         ],
         "stakeholders": [
-          "EMP0013@company.com"
+          "EMP0026@company.com"
         ],
         "deliverables": [
           "Deployment Plan",
@@ -611,18 +603,19 @@
         "process_id": "PROC002-08",
         "process_name": "Post-Launch Support",
         "description": "Monitor system performance and provide support",
-        "category": "Incident Response",
+        "category": "Onboarding Process",
         "status": "planned",
         "priority": "medium",
-        "start_date": "2025-07-04",
-        "end_date": "2025-08-03",
-        "estimated_hours": 270,
+        "start_date": "2025-07-08",
+        "end_date": "2025-08-07",
+        "estimated_hours": 240,
         "responsible_members": [
-          "EMP0032@company.com"
+          "EMP0019@company.com",
+          "EMP0008@company.com"
         ],
         "stakeholders": [
-          "EMP0017@company.com",
-          "EMP0013@company.com"
+          "EMP0002@company.com",
+          "EMP0033@company.com"
         ],
         "deliverables": [
           "Performance Reports",
@@ -653,19 +646,19 @@
         "process_id": "PROC003-01",
         "process_name": "Requirements Gathering",
         "description": "Collect and document detailed project requirements from stakeholders",
-        "category": "Testing Process",
+        "category": "Documentation Process",
         "status": "completed",
-        "priority": "medium",
-        "start_date": "2025-05-29",
-        "end_date": "2025-06-12",
-        "estimated_hours": 84,
+        "priority": "low",
+        "start_date": "2025-03-07",
+        "end_date": "2025-03-21",
+        "estimated_hours": 98,
         "responsible_members": [
-          "EMP0022@company.com",
-          "EMP0033@company.com"
+          "EMP0033@company.com",
+          "EMP0035@company.com"
         ],
         "stakeholders": [
-          "EMP0026@company.com",
-          "EMP0012@company.com"
+          "EMP0021@company.com",
+          "EMP0013@company.com"
         ],
         "deliverables": [
           "Requirements Document",
@@ -677,8 +670,7 @@
           "PROC003-02"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -691,17 +683,18 @@
         "process_id": "PROC003-02",
         "process_name": "Design & Architecture",
         "description": "Create system design and technical architecture documentation",
-        "category": "Change Management",
-        "status": "in-progress",
-        "priority": "high",
-        "start_date": "2025-06-12",
-        "end_date": "2025-07-03",
-        "estimated_hours": 126,
+        "category": "Quality Assurance",
+        "status": "completed",
+        "priority": "low",
+        "start_date": "2025-03-21",
+        "end_date": "2025-04-11",
+        "estimated_hours": 147,
         "responsible_members": [
-          "EMP0037@company.com"
+          "EMP0004@company.com"
         ],
         "stakeholders": [
-          "EMP0009@company.com"
+          "EMP0017@company.com",
+          "EMP0026@company.com"
         ],
         "deliverables": [
           "System Architecture",
@@ -716,33 +709,32 @@
           "PROC003-03"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 34
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC003-03",
         "process_name": "Development Sprint Planning",
         "description": "Plan development sprints and allocate resources",
-        "category": "Deployment Process",
-        "status": "planned",
-        "priority": "high",
-        "start_date": "2025-07-03",
-        "end_date": "2025-07-06",
-        "estimated_hours": 21,
+        "category": "Documentation Process",
+        "status": "completed",
+        "priority": "low",
+        "start_date": "2025-04-11",
+        "end_date": "2025-04-14",
+        "estimated_hours": 24,
         "responsible_members": [
-          "EMP0032@company.com",
-          "EMP0019@company.com",
-          "EMP0024@company.com"
+          "EMP0035@company.com",
+          "EMP0025@company.com",
+          "EMP0029@company.com"
         ],
         "stakeholders": [
-          "EMP0007@company.com"
+          "EMP0036@company.com"
         ],
         "deliverables": [
           "Sprint Backlog",
@@ -756,33 +748,33 @@
           "PROC003-04"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC003-04",
         "process_name": "Core Development",
         "description": "Implement core functionality according to specifications",
-        "category": "Security Process",
-        "status": "planned",
+        "category": "Deployment Process",
+        "status": "completed",
         "priority": "medium",
-        "start_date": "2025-07-06",
-        "end_date": "2025-08-20",
-        "estimated_hours": 450,
+        "start_date": "2025-04-14",
+        "end_date": "2025-05-29",
+        "estimated_hours": 315,
         "responsible_members": [
-          "EMP0030@company.com"
+          "EMP0010@company.com",
+          "EMP0014@company.com",
+          "EMP0036@company.com"
         ],
         "stakeholders": [
-          "EMP0025@company.com",
-          "EMP0027@company.com"
+          "EMP0018@company.com",
+          "EMP0036@company.com"
         ],
         "deliverables": [
           "Source Code",
@@ -797,31 +789,29 @@
           "PROC003-05"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC003-05",
         "process_name": "Quality Assurance",
         "description": "Comprehensive testing of all system components",
-        "category": "Deployment Process",
-        "status": "planned",
-        "priority": "medium",
-        "start_date": "2025-08-20",
-        "end_date": "2025-09-03",
+        "category": "Documentation Process",
+        "status": "completed",
+        "priority": "high",
+        "start_date": "2025-05-29",
+        "end_date": "2025-06-12",
         "estimated_hours": 140,
         "responsible_members": [
-          "EMP0035@company.com",
-          "EMP0023@company.com",
-          "EMP0034@company.com"
+          "EMP0024@company.com",
+          "EMP0024@company.com",
+          "EMP0027@company.com"
         ],
         "stakeholders": [
           "EMP0034@company.com"
@@ -847,26 +837,25 @@
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC003-06",
         "process_name": "User Acceptance Testing",
         "description": "Stakeholder testing and validation of requirements",
-        "category": "Change Management",
-        "status": "planned",
-        "priority": "high",
-        "start_date": "2025-09-03",
-        "end_date": "2025-09-13",
-        "estimated_hours": 100,
+        "category": "Testing Process",
+        "status": "completed",
+        "priority": "low",
+        "start_date": "2025-06-12",
+        "end_date": "2025-06-22",
+        "estimated_hours": 80,
         "responsible_members": [
-          "EMP0001@company.com",
-          "EMP0001@company.com",
-          "EMP0006@company.com"
+          "EMP0008@company.com",
+          "EMP0037@company.com",
+          "EMP0005@company.com"
         ],
         "stakeholders": [
-          "EMP0026@company.com",
-          "EMP0010@company.com"
+          "EMP0038@company.com"
         ],
         "deliverables": [
           "UAT Results",
@@ -889,23 +878,25 @@
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC003-07",
         "process_name": "Deployment",
         "description": "Deploy system to production environment",
-        "category": "Onboarding Process",
-        "status": "planned",
+        "category": "Performance Review",
+        "status": "completed",
         "priority": "low",
-        "start_date": "2025-09-13",
-        "end_date": "2025-09-18",
-        "estimated_hours": 45,
+        "start_date": "2025-06-22",
+        "end_date": "2025-06-27",
+        "estimated_hours": 35,
         "responsible_members": [
-          "EMP0038@company.com"
+          "EMP0007@company.com",
+          "EMP0004@company.com"
         ],
         "stakeholders": [
-          "EMP0010@company.com"
+          "EMP0008@company.com",
+          "EMP0031@company.com"
         ],
         "deliverables": [
           "Deployment Plan",
@@ -927,25 +918,24 @@
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC003-08",
         "process_name": "Post-Launch Support",
         "description": "Monitor system performance and provide support",
-        "category": "Documentation Process",
-        "status": "planned",
-        "priority": "low",
-        "start_date": "2025-09-18",
-        "end_date": "2025-10-18",
-        "estimated_hours": 270,
+        "category": "Development Workflow",
+        "status": "in-progress",
+        "priority": "medium",
+        "start_date": "2025-06-27",
+        "end_date": "2025-07-27",
+        "estimated_hours": 210,
         "responsible_members": [
-          "EMP0010@company.com",
-          "EMP0038@company.com"
+          "EMP0035@company.com",
+          "EMP0004@company.com"
         ],
         "stakeholders": [
-          "EMP0014@company.com",
-          "EMP0025@company.com"
+          "EMP0026@company.com"
         ],
         "deliverables": [
           "Performance Reports",
@@ -965,7 +955,7 @@
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 30
       }
     ]
   },
@@ -977,19 +967,20 @@
         "process_id": "PROC004-01",
         "process_name": "Requirements Gathering",
         "description": "Collect and document detailed project requirements from stakeholders",
-        "category": "Change Management",
+        "category": "Development Workflow",
         "status": "completed",
-        "priority": "low",
-        "start_date": "2025-05-21",
-        "end_date": "2025-06-04",
-        "estimated_hours": 84,
+        "priority": "high",
+        "start_date": "2024-12-31",
+        "end_date": "2025-01-14",
+        "estimated_hours": 98,
         "responsible_members": [
-          "EMP0021@company.com",
-          "EMP0018@company.com",
-          "EMP0006@company.com"
+          "EMP0011@company.com",
+          "EMP0028@company.com",
+          "EMP0032@company.com"
         ],
         "stakeholders": [
-          "EMP0035@company.com"
+          "EMP0023@company.com",
+          "EMP0008@company.com"
         ],
         "deliverables": [
           "Requirements Document",
@@ -1014,18 +1005,20 @@
         "process_id": "PROC004-02",
         "process_name": "Design & Architecture",
         "description": "Create system design and technical architecture documentation",
-        "category": "Development Workflow",
+        "category": "Security Process",
         "status": "completed",
-        "priority": "low",
-        "start_date": "2025-06-04",
-        "end_date": "2025-06-25",
-        "estimated_hours": 168,
+        "priority": "medium",
+        "start_date": "2025-01-14",
+        "end_date": "2025-02-04",
+        "estimated_hours": 147,
         "responsible_members": [
-          "EMP0005@company.com",
-          "EMP0017@company.com"
+          "EMP0029@company.com",
+          "EMP0011@company.com",
+          "EMP0021@company.com"
         ],
         "stakeholders": [
-          "EMP0040@company.com"
+          "EMP0026@company.com",
+          "EMP0030@company.com"
         ],
         "deliverables": [
           "System Architecture",
@@ -1040,9 +1033,7 @@
           "PROC004-03"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -1055,18 +1046,20 @@
         "process_id": "PROC004-03",
         "process_name": "Development Sprint Planning",
         "description": "Plan development sprints and allocate resources",
-        "category": "Change Management",
+        "category": "Onboarding Process",
         "status": "completed",
-        "priority": "high",
-        "start_date": "2025-06-25",
-        "end_date": "2025-06-28",
+        "priority": "low",
+        "start_date": "2025-02-04",
+        "end_date": "2025-02-07",
         "estimated_hours": 30,
         "responsible_members": [
-          "EMP0016@company.com"
+          "EMP0014@company.com",
+          "EMP0023@company.com",
+          "EMP0009@company.com"
         ],
         "stakeholders": [
-          "EMP0032@company.com",
-          "EMP0032@company.com"
+          "EMP0019@company.com",
+          "EMP0005@company.com"
         ],
         "deliverables": [
           "Sprint Backlog",
@@ -1094,17 +1087,19 @@
         "process_id": "PROC004-04",
         "process_name": "Core Development",
         "description": "Implement core functionality according to specifications",
-        "category": "Performance Review",
-        "status": "in-progress",
-        "priority": "medium",
-        "start_date": "2025-06-28",
-        "end_date": "2025-08-12",
-        "estimated_hours": 270,
+        "category": "Testing Process",
+        "status": "completed",
+        "priority": "high",
+        "start_date": "2025-02-07",
+        "end_date": "2025-03-24",
+        "estimated_hours": 315,
         "responsible_members": [
-          "EMP0034@company.com"
+          "EMP0011@company.com",
+          "EMP0015@company.com",
+          "EMP0008@company.com"
         ],
         "stakeholders": [
-          "EMP0037@company.com"
+          "EMP0039@company.com"
         ],
         "deliverables": [
           "Source Code",
@@ -1120,31 +1115,31 @@
         ],
         "risks": [
           "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Technical complexity challenges"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 15
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC004-05",
         "process_name": "Quality Assurance",
         "description": "Comprehensive testing of all system components",
-        "category": "Deployment Process",
-        "status": "planned",
-        "priority": "medium",
-        "start_date": "2025-08-12",
-        "end_date": "2025-08-26",
-        "estimated_hours": 98,
+        "category": "Change Management",
+        "status": "completed",
+        "priority": "low",
+        "start_date": "2025-03-24",
+        "end_date": "2025-04-07",
+        "estimated_hours": 126,
         "responsible_members": [
-          "EMP0020@company.com"
+          "EMP0024@company.com"
         ],
         "stakeholders": [
-          "EMP0028@company.com"
+          "EMP0002@company.com",
+          "EMP0007@company.com"
         ],
         "deliverables": [
           "Test Cases",
@@ -1160,33 +1155,31 @@
         ],
         "risks": [
           "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Technical complexity challenges"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC004-06",
         "process_name": "User Acceptance Testing",
         "description": "Stakeholder testing and validation of requirements",
-        "category": "Testing Process",
-        "status": "planned",
-        "priority": "high",
-        "start_date": "2025-08-26",
-        "end_date": "2025-09-05",
+        "category": "Onboarding Process",
+        "status": "completed",
+        "priority": "low",
+        "start_date": "2025-04-07",
+        "end_date": "2025-04-17",
         "estimated_hours": 80,
         "responsible_members": [
-          "EMP0001@company.com",
-          "EMP0013@company.com"
+          "EMP0030@company.com"
         ],
         "stakeholders": [
-          "EMP0006@company.com",
-          "EMP0026@company.com"
+          "EMP0033@company.com",
+          "EMP0003@company.com"
         ],
         "deliverables": [
           "UAT Results",
@@ -1200,33 +1193,31 @@
           "PROC004-07"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC004-07",
         "process_name": "Deployment",
         "description": "Deploy system to production environment",
-        "category": "Security Process",
-        "status": "planned",
-        "priority": "low",
-        "start_date": "2025-09-05",
-        "end_date": "2025-09-10",
-        "estimated_hours": 40,
+        "category": "Quality Assurance",
+        "status": "completed",
+        "priority": "medium",
+        "start_date": "2025-04-17",
+        "end_date": "2025-04-22",
+        "estimated_hours": 35,
         "responsible_members": [
-          "EMP0019@company.com",
-          "EMP0018@company.com"
+          "EMP0034@company.com"
         ],
         "stakeholders": [
-          "EMP0031@company.com"
+          "EMP0026@company.com",
+          "EMP0013@company.com"
         ],
         "deliverables": [
           "Deployment Plan",
@@ -1240,31 +1231,35 @@
           "PROC004-08"
         ],
         "risks": [
-          "Resource availability constraints"
+          "Resource availability constraints",
+          "Technical complexity challenges",
+          "Timeline dependencies"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC004-08",
         "process_name": "Post-Launch Support",
         "description": "Monitor system performance and provide support",
-        "category": "Testing Process",
-        "status": "planned",
-        "priority": "high",
-        "start_date": "2025-09-10",
-        "end_date": "2025-10-10",
-        "estimated_hours": 270,
+        "category": "Change Management",
+        "status": "completed",
+        "priority": "medium",
+        "start_date": "2025-04-22",
+        "end_date": "2025-05-22",
+        "estimated_hours": 210,
         "responsible_members": [
-          "EMP0023@company.com"
+          "EMP0011@company.com",
+          "EMP0004@company.com",
+          "EMP0039@company.com"
         ],
         "stakeholders": [
-          "EMP0038@company.com",
-          "EMP0009@company.com"
+          "EMP0015@company.com",
+          "EMP0027@company.com"
         ],
         "deliverables": [
           "Performance Reports",
@@ -1283,7 +1278,7 @@
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       }
     ]
   },
@@ -1295,20 +1290,19 @@
         "process_id": "PROC005-01",
         "process_name": "Requirements Gathering",
         "description": "Collect and document detailed project requirements from stakeholders",
-        "category": "Documentation Process",
+        "category": "Deployment Process",
         "status": "completed",
         "priority": "high",
-        "start_date": "2025-04-29",
-        "end_date": "2025-05-13",
-        "estimated_hours": 140,
+        "start_date": "2025-01-10",
+        "end_date": "2025-01-24",
+        "estimated_hours": 126,
         "responsible_members": [
-          "EMP0011@company.com",
-          "EMP0024@company.com",
-          "EMP0034@company.com"
+          "EMP0016@company.com",
+          "EMP0038@company.com"
         ],
         "stakeholders": [
-          "EMP0006@company.com",
-          "EMP0031@company.com"
+          "EMP0040@company.com",
+          "EMP0034@company.com"
         ],
         "deliverables": [
           "Requirements Document",
@@ -1320,9 +1314,7 @@
           "PROC005-02"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -1335,18 +1327,20 @@
         "process_id": "PROC005-02",
         "process_name": "Design & Architecture",
         "description": "Create system design and technical architecture documentation",
-        "category": "Meeting Process",
+        "category": "Code Review Process",
         "status": "completed",
-        "priority": "high",
-        "start_date": "2025-05-13",
-        "end_date": "2025-06-03",
+        "priority": "medium",
+        "start_date": "2025-01-24",
+        "end_date": "2025-02-14",
         "estimated_hours": 189,
         "responsible_members": [
-          "EMP0007@company.com"
+          "EMP0033@company.com",
+          "EMP0025@company.com",
+          "EMP0027@company.com"
         ],
         "stakeholders": [
           "EMP0005@company.com",
-          "EMP0032@company.com"
+          "EMP0012@company.com"
         ],
         "deliverables": [
           "System Architecture",
@@ -1375,18 +1369,20 @@
         "process_id": "PROC005-03",
         "process_name": "Development Sprint Planning",
         "description": "Plan development sprints and allocate resources",
-        "category": "Performance Review",
+        "category": "Meeting Process",
         "status": "completed",
         "priority": "medium",
-        "start_date": "2025-06-03",
-        "end_date": "2025-06-06",
-        "estimated_hours": 27,
+        "start_date": "2025-02-14",
+        "end_date": "2025-02-17",
+        "estimated_hours": 30,
         "responsible_members": [
-          "EMP0019@company.com",
-          "EMP0036@company.com"
+          "EMP0027@company.com",
+          "EMP0001@company.com",
+          "EMP0012@company.com"
         ],
         "stakeholders": [
-          "EMP0018@company.com"
+          "EMP0028@company.com",
+          "EMP0028@company.com"
         ],
         "deliverables": [
           "Sprint Backlog",
@@ -1401,7 +1397,8 @@
         ],
         "risks": [
           "Resource availability constraints",
-          "Technical complexity challenges"
+          "Technical complexity challenges",
+          "Timeline dependencies"
         ],
         "success_criteria": [
           "All deliverables completed on time",
@@ -1414,17 +1411,20 @@
         "process_id": "PROC005-04",
         "process_name": "Core Development",
         "description": "Implement core functionality according to specifications",
-        "category": "Documentation Process",
-        "status": "in-progress",
+        "category": "Quality Assurance",
+        "status": "completed",
         "priority": "high",
-        "start_date": "2025-06-06",
-        "end_date": "2025-07-21",
-        "estimated_hours": 315,
+        "start_date": "2025-02-17",
+        "end_date": "2025-04-03",
+        "estimated_hours": 360,
         "responsible_members": [
-          "EMP0011@company.com"
+          "EMP0023@company.com",
+          "EMP0001@company.com",
+          "EMP0023@company.com"
         ],
         "stakeholders": [
-          "EMP0035@company.com"
+          "EMP0016@company.com",
+          "EMP0006@company.com"
         ],
         "deliverables": [
           "Source Code",
@@ -1439,33 +1439,32 @@
           "PROC005-05"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 67
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC005-05",
         "process_name": "Quality Assurance",
         "description": "Comprehensive testing of all system components",
-        "category": "Quality Assurance",
-        "status": "planned",
-        "priority": "low",
-        "start_date": "2025-07-21",
-        "end_date": "2025-08-04",
-        "estimated_hours": 112,
+        "category": "Performance Review",
+        "status": "completed",
+        "priority": "medium",
+        "start_date": "2025-04-03",
+        "end_date": "2025-04-17",
+        "estimated_hours": 126,
         "responsible_members": [
-          "EMP0007@company.com",
-          "EMP0014@company.com"
+          "EMP0039@company.com",
+          "EMP0018@company.com"
         ],
         "stakeholders": [
-          "EMP0039@company.com",
-          "EMP0004@company.com"
+          "EMP0020@company.com",
+          "EMP0011@company.com"
         ],
         "deliverables": [
           "Test Cases",
@@ -1480,33 +1479,31 @@
           "PROC005-06"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC005-06",
         "process_name": "User Acceptance Testing",
         "description": "Stakeholder testing and validation of requirements",
-        "category": "Deployment Process",
-        "status": "planned",
-        "priority": "high",
-        "start_date": "2025-08-04",
-        "end_date": "2025-08-14",
-        "estimated_hours": 80,
+        "category": "Security Process",
+        "status": "completed",
+        "priority": "medium",
+        "start_date": "2025-04-17",
+        "end_date": "2025-04-27",
+        "estimated_hours": 90,
         "responsible_members": [
-          "EMP0033@company.com",
-          "EMP0010@company.com"
+          "EMP0011@company.com"
         ],
         "stakeholders": [
-          "EMP0034@company.com",
-          "EMP0038@company.com"
+          "EMP0007@company.com",
+          "EMP0036@company.com"
         ],
         "deliverables": [
           "UAT Results",
@@ -1520,32 +1517,33 @@
           "PROC005-07"
         ],
         "risks": [
-          "Resource availability constraints"
+          "Resource availability constraints",
+          "Technical complexity challenges"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC005-07",
         "process_name": "Deployment",
         "description": "Deploy system to production environment",
-        "category": "Change Management",
-        "status": "planned",
+        "category": "Deployment Process",
+        "status": "completed",
         "priority": "high",
-        "start_date": "2025-08-14",
-        "end_date": "2025-08-19",
-        "estimated_hours": 45,
+        "start_date": "2025-04-27",
+        "end_date": "2025-05-02",
+        "estimated_hours": 40,
         "responsible_members": [
-          "EMP0001@company.com",
-          "EMP0001@company.com"
+          "EMP0031@company.com",
+          "EMP0007@company.com"
         ],
         "stakeholders": [
-          "EMP0034@company.com",
-          "EMP0023@company.com"
+          "EMP0031@company.com",
+          "EMP0029@company.com"
         ],
         "deliverables": [
           "Deployment Plan",
@@ -1559,33 +1557,31 @@
           "PROC005-08"
         ],
         "risks": [
-          "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Resource availability constraints"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       },
       {
         "process_id": "PROC005-08",
         "process_name": "Post-Launch Support",
         "description": "Monitor system performance and provide support",
-        "category": "Development Workflow",
-        "status": "planned",
-        "priority": "high",
-        "start_date": "2025-08-19",
-        "end_date": "2025-09-18",
-        "estimated_hours": 300,
+        "category": "Onboarding Process",
+        "status": "completed",
+        "priority": "medium",
+        "start_date": "2025-05-02",
+        "end_date": "2025-06-01",
+        "estimated_hours": 240,
         "responsible_members": [
-          "EMP0038@company.com",
-          "EMP0030@company.com"
+          "EMP0031@company.com",
+          "EMP0012@company.com"
         ],
         "stakeholders": [
-          "EMP0002@company.com"
+          "EMP0011@company.com"
         ],
         "deliverables": [
           "Performance Reports",
@@ -1598,15 +1594,14 @@
         "next_processes": [],
         "risks": [
           "Resource availability constraints",
-          "Technical complexity challenges",
-          "Timeline dependencies"
+          "Technical complexity challenges"
         ],
         "success_criteria": [
           "All deliverables completed on time",
           "Quality standards met",
           "Stakeholder approval received"
         ],
-        "progress_percentage": 0
+        "progress_percentage": 100
       }
     ]
   }

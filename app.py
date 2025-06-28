@@ -48,11 +48,16 @@ if "user_name" not in st.session_state:
         st.title("🧑‍💼 Welcome to Employee Onboarding Chatbot")
         st.markdown("Let's get started. What's your full name?")
         full_name = st.text_input("Full Name")
+        department = st.selectbox(
+            "Department",
+            ["Engineering", "Product", "Design", "Finance", "Data Science", "DevOps"]
+        )
         submitted = st.form_submit_button("Start Chat")
 
         if submitted and full_name:
             st.session_state.user_name = full_name.strip().split()[
                 0]   # First name
+            st.session_state.department = department
             st.session_state.chat = [
                 {"role": "assistant", "content": f"Hi {st.session_state.user_name} 👋 I'm here to help you get started at the company!"}
             ]
@@ -117,6 +122,9 @@ elif "user_name" in st.session_state:
         with st.spinner("🔧 Initializing assistant..."):
             try:
                 st.session_state.assistant = OnboardingAssistant()
+                if st.session_state.department:
+                    st.session_state.assistant.set_additional_context(
+                        f"My name is {st.session_state.user_name} and I work in the {st.session_state.department} department.")
                 logger.info("OnboardingAssistant initialized successfully")
                 st.success("✅ Assistant ready!")
             except Exception as e:
